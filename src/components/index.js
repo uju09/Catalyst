@@ -5,4 +5,5 @@ export { Programs } from './Programs';
 export { Features } from './Features';
 export { Results } from './Results';
 export { Footer } from './Footer';
+export { KnowledgeCornerPreview } from './KnowledgeCornerPreview';
 export { Courses } from '../pages/Courses';

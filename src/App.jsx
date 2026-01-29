@@ -7,14 +7,16 @@ import {
   Features,
   Results as ResultsSection,
   Footer,
+  KnowledgeCornerPreview,
 } from './components';
-import { Courses, Results, Contact } from './pages';
+import { Courses, Results, Contact, KnowledgeCorner } from './pages';
 
 const HomePage = () => (
   <>
     <Hero />
     <Programs />
     <Features />
+    <KnowledgeCornerPreview />
     <ResultsSection />
   </>
 );
@@ -30,6 +32,7 @@ export default function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/results" element={<Results />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/knowledge-corner" element={<KnowledgeCorner />} />
         </Routes>
         <Footer />
       </div>
