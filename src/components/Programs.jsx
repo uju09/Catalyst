@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
 import { Calendar, Trophy, FlaskConical, ArrowRight } from 'lucide-react';
 
 const courses = [
   {
+    id: "ignite",
     title: "Ignite Foundation",
     badge: "Class 8-10",
     badgeColor: "bg-[#EF4444]",
@@ -13,6 +15,7 @@ const courses = [
     examsIcon: Trophy,
   },
   {
+    id: "super13",
     title: "Super-13 Integrated",
     badge: "Class 11-12",
     badgeColor: "bg-[#0090D4]",
@@ -59,9 +62,12 @@ const CourseCard = ({ course }) => (
         </div>
       </div>
 
-      <a href="#contact" className="inline-flex items-center text-[#0090D4] font-bold hover:text-[#EF4444] transition-colors gap-2">
+      <Link
+        to={`/courses#${course.id}`}
+        className="inline-flex items-center text-[#0090D4] font-bold hover:text-[#EF4444] transition-colors gap-2"
+      >
         View Program Details <ArrowRight size={18} />
-      </a>
+      </Link>
     </div>
   </div>
 );
@@ -69,7 +75,7 @@ const CourseCard = ({ course }) => (
 export const Programs = () => (
   <section id="programs" className="py-20 bg-slate-50">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 -mt-32 relative z-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-20">
         {courses.map((course, idx) => (
           <CourseCard key={idx} course={course} />
         ))}

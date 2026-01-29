@@ -5,9 +5,38 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Courses", href: "/courses" },
-  { name: "Results", href: "/#results" },
-  { name: "Contact Us", href: "/#contact" },
+  { name: "Results", href: "/results" },
+  { name: "Contact Us", href: "/contact" },
 ];
+
+// Reusable Logo Component
+export const Logo = ({ size = 'default' }) => {
+  const sizes = {
+    small: { box: 'w-10 h-10', c: 'text-xl', three: 'text-[10px] top-0.5 right-1', text: 'text-base', sub: 'text-[8px]' },
+    default: { box: 'w-12 h-12', c: 'text-2xl', three: 'text-xs top-1 right-1.5', text: 'text-lg', sub: 'text-[10px]' },
+    large: { box: 'w-16 h-16', c: 'text-4xl', three: 'text-sm top-1 right-2', text: 'text-xl', sub: 'text-xs' },
+  };
+  const s = sizes[size] || sizes.default;
+
+  return (
+    <div className="flex items-center gap-3">
+      <div className={`${s.box} bg-white border-[3px] border-[#EF4444] rounded-2xl flex items-center justify-center shadow-md relative overflow-hidden`}>
+        {/* Subtle gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50"></div>
+        <span className={`text-[#0090D4] font-extrabold ${s.c} leading-none relative z-10`}>C</span>
+        <span className={`text-[#0090D4] font-bold absolute ${s.three} z-10`}>3</span>
+      </div>
+      <div className="flex flex-col">
+        <span className={`font-extrabold ${s.text} leading-tight text-[#0090D4] tracking-tight`}>
+          CATALYST COACHING
+        </span>
+        <span className={`${s.sub} font-bold text-slate-400 tracking-[0.2em] uppercase`}>
+          CLASSES
+        </span>
+      </div>
+    </div>
+  );
+};
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +44,12 @@ export const Navbar = () => {
 
   const handleNavClick = (href) => {
     setIsOpen(false);
-    // If it's a hash link on the home page, scroll to element
+    // Handle Home - scroll to top
+    if (href === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    // Handle hash links on homepage
     if (href.includes('#') && location.pathname === '/') {
       const id = href.split('#')[1];
       const element = document.getElementById(id);
@@ -30,15 +64,8 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-3 cursor-pointer">
-            <div className="w-11 h-11 bg-white border-[3px] border-[#EF4444] rounded-lg flex flex-col items-center justify-center shadow-sm">
-              <span className="text-[#0090D4] font-extrabold text-xl leading-none -mb-1">C</span>
-              <span className="text-[#0090D4] text-[10px] font-bold leading-none ml-2">3</span>
-            </div>
-            <div>
-              <span className="block font-extrabold text-xl leading-tight text-[#0090D4] tracking-tight">CATALYST</span>
-              <span className="block text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase">Coaching Classes</span>
-            </div>
+          <Link to="/" className="cursor-pointer hover:opacity-90 transition-opacity" onClick={() => handleNavClick('/')}>
+            <Logo size="default" />
           </Link>
 
           {/* Desktop Menu */}
@@ -49,6 +76,7 @@ export const Navbar = () => {
                   key={link.name}
                   to={link.href}
                   className="text-sm font-semibold text-slate-600 hover:text-[#0090D4] transition-colors"
+                  onClick={() => handleNavClick(link.href)}
                 >
                   {link.name}
                 </Link>
