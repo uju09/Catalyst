@@ -5,17 +5,17 @@ import {
   Hero,
   Programs,
   Features,
-  Results,
+  Results as ResultsSection,
   Footer,
-  Courses
 } from './components';
+import { Courses, Results, Contact } from './pages';
 
 const HomePage = () => (
   <>
     <Hero />
     <Programs />
     <Features />
-    <Results />
+    <ResultsSection />
   </>
 );
 
@@ -28,6 +28,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>
