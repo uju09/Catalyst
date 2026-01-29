@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Custom base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #EF4444;
+  color: white;
+}
