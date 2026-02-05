@@ -5,6 +5,7 @@ import {
   Hero,
   Programs,
   Features,
+  Reviews,
   Results as ResultsSection,
   Footer,
   KnowledgeCornerPreview,
@@ -15,9 +16,8 @@ const HomePage = () => (
   <>
     <Hero />
     <Programs />
+    <Reviews />
     <Features />
-    <KnowledgeCornerPreview />
-    <ResultsSection />
   </>
 );
 

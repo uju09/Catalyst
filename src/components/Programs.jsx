@@ -19,7 +19,7 @@ const courses = [
     title: "Super-13 Integrated",
     badge: "Class 11-12",
     badgeColor: "bg-[#0090D4]",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80",
+    image: "/super13.png",
     description: "Comprehensive 2-year preparation for IIT-JEE, NEET, and other competitive exams.",
     duration: "April 2026 – May 2028",
     exams: "JEE Main, Adv, BITSAT",
@@ -29,53 +29,51 @@ const courses = [
 ];
 
 const CourseCard = ({ course }) => (
-  <div className="bg-white rounded-2xl shadow-lg shadow-[#0090D4]/10 overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#0090D4]/30">
-    <div className="relative h-64 overflow-hidden">
+  <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 overflow-hidden group">
+    {/* Image */}
+    <div className="relative overflow-hidden">
       <img
         src={course.image}
         alt={course.title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        className="w-full h-auto object-contain"
       />
-      <span className={`absolute top-4 right-4 ${course.badgeColor} text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg`}>
+      <span className={`absolute top-3 right-3 ${course.badgeColor} text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full`}>
         {course.badge}
       </span>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-      <h3 className="absolute bottom-6 left-6 text-2xl font-bold text-white">{course.title}</h3>
     </div>
-    <div className="p-8">
-      <p className="text-slate-500 text-sm mb-6 leading-relaxed font-medium">
+
+    {/* Content */}
+    <div className="p-4 sm:p-5">
+      <p className="text-slate-500 text-xs sm:text-sm mb-3 line-clamp-2">
         {course.description}
       </p>
 
-      <div className="space-y-4 mb-8">
-        <div className="flex items-center gap-4 text-sm text-slate-600 bg-blue-50/50 p-2 rounded-lg">
-          <div className="w-8 h-8 rounded-full bg-[#0090D4]/10 flex items-center justify-center text-[#0090D4]">
-            <course.durationIcon size={16} />
-          </div>
-          <span className="font-semibold">{course.duration}</span>
-        </div>
-        <div className="flex items-center gap-4 text-sm text-slate-600 bg-blue-50/50 p-2 rounded-lg">
-          <div className="w-8 h-8 rounded-full bg-[#0090D4]/10 flex items-center justify-center text-[#0090D4]">
-            <course.examsIcon size={16} />
-          </div>
-          <span className="font-semibold">{course.exams}</span>
-        </div>
+      {/* Info Chips */}
+      <div className="flex flex-wrap gap-2 mb-3">
+        <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs text-slate-600 bg-slate-100 px-2.5 py-1 rounded-full">
+          <course.durationIcon size={12} className="text-[#0090D4]" />
+          {course.duration}
+        </span>
+        <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs text-slate-600 bg-slate-100 px-2.5 py-1 rounded-full">
+          <course.examsIcon size={12} className="text-[#0090D4]" />
+          {course.exams}
+        </span>
       </div>
 
       <Link
         to={`/courses#${course.id}`}
-        className="inline-flex items-center text-[#0090D4] font-bold hover:text-[#EF4444] transition-colors gap-2"
+        className="inline-flex items-center text-xs sm:text-sm text-[#0090D4] font-semibold hover:text-[#EF4444] transition-colors gap-1"
       >
-        View Program Details <ArrowRight size={18} />
+        View Details <ArrowRight size={14} />
       </Link>
     </div>
   </div>
 );
 
 export const Programs = () => (
-  <section id="programs" className="py-20 bg-slate-50">
+  <section id="programs" className="py-12 sm:py-16 md:py-20 bg-slate-50">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 relative z-20">
         {courses.map((course, idx) => (
           <CourseCard key={idx} course={course} />
         ))}
