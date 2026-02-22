@@ -76,7 +76,7 @@ export const Reviews = () => {
           {duplicatedResults.map((result, idx) => (
             <ResultCard
               key={idx}
-              className="w-[180px] sm:w-[320px] md:w-[450px]"
+              className="w-[180px] sm:w-[260px] md:w-[320px]"
               name={result.name}
               rank={result.rank}
               college={result.college}
