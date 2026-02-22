@@ -2,3 +2,8 @@ export { Courses } from './Courses';
 export { Results } from './Results';
 export { Contact } from './Contact';
 export { KnowledgeCorner } from './KnowledgeCorner';
+export { KCLevel } from './KCLevel';
+export { KCPathway } from './KCPathway';
+export { KCClass } from './KCClass';
+export { IgniteProgram } from './IgniteProgram';
+export { Super13Program } from './Super13Program';

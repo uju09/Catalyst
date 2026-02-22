@@ -10,7 +10,7 @@ import {
   Footer,
   KnowledgeCornerPreview,
 } from './components';
-import { Courses, Results, Contact, KnowledgeCorner } from './pages';
+import { Courses, Results, Contact, KnowledgeCorner, KCLevel, KCPathway, KCClass, IgniteProgram, Super13Program } from './pages';
 
 const HomePage = () => (
   <>
@@ -32,6 +32,11 @@ export default function App() {
           <Route path="/results" element={<Results />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/knowledge-corner" element={<KnowledgeCorner />} />
+          <Route path="/knowledge-corner/level" element={<KCLevel />} />
+          <Route path="/knowledge-corner/pathway" element={<KCPathway />} />
+          <Route path="/knowledge-corner/class" element={<KCClass />} />
+          <Route path="/courses/ignite" element={<IgniteProgram />} />
+          <Route path="/courses/super-13" element={<Super13Program />} />
         </Routes>
         <Footer />
       </div>
