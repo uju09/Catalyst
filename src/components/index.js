@@ -4,6 +4,7 @@ export { Hero } from './Hero';
 export { Programs } from './Programs';
 export { Features } from './Features';
 export { Results } from './Results';
+export { Reviews } from './Reviews';
 export { Footer } from './Footer';
 export { KnowledgeCornerPreview } from './KnowledgeCornerPreview';
 export { Courses } from '../pages/Courses';

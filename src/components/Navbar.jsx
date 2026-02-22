@@ -61,7 +61,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 w-full bg-white z-50 shadow-sm border-b border-gray-100">
+    <nav className="relative w-full bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Brand Logo */}

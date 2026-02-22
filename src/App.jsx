@@ -5,6 +5,7 @@ import {
   Hero,
   Programs,
   Features,
+  Reviews,
   Results as ResultsSection,
   Footer,
   KnowledgeCornerPreview,
@@ -15,9 +16,8 @@ const HomePage = () => (
   <>
     <Hero />
     <Programs />
+    <Reviews />
     <Features />
-    <KnowledgeCornerPreview />
-    <ResultsSection />
   </>
 );
 
@@ -25,7 +25,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="font-sans text-slate-600 bg-white antialiased">
-        <AnnouncementBar />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
