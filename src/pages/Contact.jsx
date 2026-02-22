@@ -9,7 +9,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 7758884678", "+91 7758885345"],
+    details: ["+91 7758884678", "+91 7758885345", "+91 8999519632"],
     action: "tel:+917758884678"
   },
   {
@@ -21,13 +21,13 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["Catalyst Coaching Classes", "Nagpur, Maharashtra"],
+    details: ["Shop #4, Vision Aristo", "Near Mukai Chowk, Vikas Nagar"],
     action: null
   },
   {
     icon: Clock,
     title: "Timings",
-    details: ["Mon - Sat: 8:00 AM - 8:00 PM", "Sunday: Closed"],
+    details: ["9:00 AM – 9:00 PM", "All Days"],
     action: null
   },
 ];
@@ -220,7 +220,7 @@ export const Contact = () => {
                   <div className="text-center">
                     <MapPin size={48} className="text-[#0090D4] mx-auto mb-4" />
                     <h3 className="font-bold text-slate-800 mb-2">Visit Our Center</h3>
-                    <p className="text-sm text-slate-600">Catalyst Coaching Classes, Nagpur</p>
+                    <p className="text-sm text-slate-600">Shop #4, Vision Aristo, Near Mukai Chowk, Vikas Nagar</p>
                     <a
                       href="https://maps.google.com"
                       target="_blank"
