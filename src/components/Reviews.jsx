@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 
 const reviews = [
   {
@@ -39,38 +38,16 @@ const reviews = [
   },
 ];
 
+// Duplicate 4 times so we have enough content to fill large screens,
+// and scrolling 50% will be a clean loop.
+const duplicatedReviews = [...reviews, ...reviews, ...reviews, ...reviews];
+
 export const Reviews = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % reviews.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [isAutoPlaying]);
-
-  const prevReview = () => {
-    setIsAutoPlaying(false);
-    setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
-  };
-
-  const nextReview = () => {
-    setIsAutoPlaying(false);
-    setCurrentIndex((prev) => (prev + 1) % reviews.length);
-  };
-
-  const goToReview = (index) => {
-    setIsAutoPlaying(false);
-    setCurrentIndex(index);
-  };
-
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <span className="text-[#EF4444] font-bold tracking-widest uppercase text-xs">
             Student Success Stories
           </span>
@@ -81,85 +58,53 @@ export const Reviews = () => {
             Real stories from real achievers who transformed their dreams into reality with Catalyst.
           </p>
         </div>
+      </div>
 
-        {/* Reviews Carousel */}
-        <div className="relative max-w-4xl mx-auto px-8 sm:px-12">
-          {/* Main Review Card */}
-          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-5 sm:p-8 md:p-12 relative overflow-hidden">
-            {/* Quote Icon */}
-            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 text-blue-100">
-              <Quote size={40} className="sm:w-16 sm:h-16 md:w-20 md:h-20" strokeWidth={1} />
-            </div>
+      {/* Marquee Section */}
+      <div className="relative flex overflow-hidden w-full group py-4">
+        {/* Gradients removed for higher edge-to-edge opacity as requested */}
 
-            {/* Review Content */}
-            <div className="relative z-10">
-              <div className="flex flex-col items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
-                {/* Avatar */}
+        <div className="flex space-x-6 sm:space-x-8 animate-marquee pl-6 sm:pl-8 max-w-none w-max">
+          {duplicatedReviews.map((review, idx) => (
+            <div
+              key={idx}
+              className="w-[280px] sm:w-[350px] md:w-[400px] bg-white rounded-2xl shadow-lg border border-slate-100 p-6 sm:p-8 flex-shrink-0 flex flex-col justify-between"
+            >
+              <div>
+                <Quote size={24} className="text-blue-100 mb-4" strokeWidth={2} />
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed italic mb-6">
+                  "{review.text}"
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4 mt-auto">
                 <img
-                  src={reviews[currentIndex].image}
-                  alt={reviews[currentIndex].name}
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-4 border-blue-100 shadow-lg"
+                  src={review.image}
+                  alt={review.name}
+                  className="w-12 h-12 rounded-full object-cover border-2 border-blue-50"
                 />
-
-                {/* Name & Role */}
-                <div className="text-center">
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-800">
-                    {reviews[currentIndex].name}
+                <div>
+                  <h3 className="font-bold text-slate-800 text-sm sm:text-base">
+                    {review.name}
                   </h3>
                   <p className="text-[#0090D4] font-semibold text-xs sm:text-sm">
-                    {reviews[currentIndex].role}
+                    {review.role}
                   </p>
-
-                  {/* Stars */}
-                  <div className="flex gap-1 mt-2 justify-center">
-                    {[...Array(reviews[currentIndex].rating)].map((_, i) => (
-                      <Star key={i} size={16} className="sm:w-[18px] sm:h-[18px] fill-yellow-400 text-yellow-400" />
+                  <div className="flex gap-1 mt-1">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} size={12} className="fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                 </div>
               </div>
-
-              {/* Review Text */}
-              <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed italic text-center">
-                "{reviews[currentIndex].text}"
-              </p>
             </div>
-          </div>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevReview}
-            className="absolute left-0 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-blue-50 text-slate-600 hover:text-[#0090D4] transition-all"
-            aria-label="Previous review"
-          >
-            <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
-          </button>
-          <button
-            onClick={nextReview}
-            className="absolute right-0 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-blue-50 text-slate-600 hover:text-[#0090D4] transition-all"
-            aria-label="Next review"
-          >
-            <ChevronRight size={20} className="sm:w-6 sm:h-6" />
-          </button>
-        </div>
-
-        {/* Dot Indicators */}
-        <div className="flex justify-center gap-1.5 sm:gap-2 mt-6 sm:mt-8">
-          {reviews.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToReview(index)}
-              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all ${index === currentIndex
-                ? 'bg-[#0090D4] w-6 sm:w-8'
-                : 'bg-slate-300 hover:bg-slate-400'
-                }`}
-              aria-label={`Go to review ${index + 1}`}
-            />
           ))}
         </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-20">
         {/* Stats Bar */}
-        <div className="mt-10 sm:mt-12 md:mt-16 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6">
           {[
             { value: "500+", label: "Students Placed" },
             { value: "98%", label: "Success Rate" },

@@ -3,21 +3,14 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const heroImages = [
   {
-    url: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Students in classroom'
+    url: '/hero/saraswati.png',
+    alt: 'Saraswati Puja Celebration'
   },
   {
-    url: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Students studying together'
+    url: '/hero/our_courses.png',
+    alt: 'Our Courses Overview'
   },
-  {
-    url: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Graduation celebration'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Science laboratory'
-  },
+
 ];
 
 export const Hero = () => {
@@ -41,12 +34,13 @@ export const Hero = () => {
       {heroImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+          className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out bg-white ${index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 144, 212, 0.3), rgba(0, 15, 30, 0.4)), url('${image.url}')`,
-            backgroundSize: 'cover',
+            backgroundImage: `url('${image.url}')`,
+            backgroundSize: 'contain',
             backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
           }}
         />
       ))}

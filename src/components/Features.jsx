@@ -44,31 +44,31 @@ export const Features = () => (
         </h2>
       </div>
 
-      {/* Features Grid - Compact horizontal cards on mobile */}
-      <div className="space-y-3 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4 md:gap-6">
+      {/* Features Grid - Horizontal on mobile, Clean cards on desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
         {features.map((feature, idx) => (
           <div
             key={idx}
-            className="flex items-center gap-3 sm:flex-col sm:items-start bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-gray-100 hover:border-[#0090D4]/30 transition-colors"
+            className="flex flex-row md:flex-col items-center md:items-start bg-white rounded-[20px] p-4 sm:p-6 md:p-8 border border-slate-100 hover:border-[#0090D4]/20 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group gap-4 md:gap-0"
           >
-            {/* Icon */}
+            {/* Icon Block */}
             <div
-              className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-xl flex items-center justify-center"
+              className="w-12 h-12 sm:w-14 sm:h-14 md:w-12 md:h-12 flex-shrink-0 rounded-[14px] flex items-center justify-center md:mb-5 transition-transform duration-300 group-hover:scale-110"
               style={{ backgroundColor: idx % 2 === 0 ? '#E0F2FE' : '#F3E8FF' }}
             >
               <feature.icon
-                size={24}
-                className="sm:w-7 sm:h-7"
+                size={22}
+                className="sm:w-6 sm:h-6 md:w-[22px] md:h-[22px]"
                 style={{ color: idx % 2 === 0 ? '#0090D4' : '#8B5CF6' }}
               />
             </div>
 
-            {/* Content */}
+            {/* Content Text */}
             <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-sm sm:text-base text-slate-800 mb-0.5 sm:mb-1">
+              <h3 className="font-bold text-base sm:text-lg text-slate-800 mb-1 md:mb-2 line-clamp-1 md:line-clamp-none">
                 {feature.title}
               </h3>
-              <p className="text-slate-500 text-xs sm:text-sm line-clamp-2">
+              <p className="text-slate-500 text-xs sm:text-sm leading-relaxed line-clamp-2 md:line-clamp-none">
                 {feature.desc}
               </p>
             </div>

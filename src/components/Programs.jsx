@@ -6,8 +6,10 @@ const courses = [
     id: "ignite",
     title: "Ignite Foundation",
     badge: "Class 8-10",
-    badgeColor: "bg-[#EF4444]",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+    badgeColor: "bg-[#243b32]",
+    iconColor: "text-[#243b32]",
+    hoverColor: "hover:text-[#243b32]",
+    image: "/ignite.png",
     description: "Build a strong foundation for future competitive exams while excelling in school curriculum.",
     duration: "April 2026 – Feb 2027",
     exams: "Olympiads, NSEJS, NSTSE",
@@ -19,6 +21,8 @@ const courses = [
     title: "Super-13 Integrated",
     badge: "Class 11-12",
     badgeColor: "bg-[#0090D4]",
+    iconColor: "text-[#0090D4]",
+    hoverColor: "hover:text-[#0090D4]",
     image: "/super13.png",
     description: "Comprehensive 2-year preparation for IIT-JEE, NEET, and other competitive exams.",
     duration: "April 2026 – May 2028",
@@ -51,18 +55,18 @@ const CourseCard = ({ course }) => (
       {/* Info Chips */}
       <div className="flex flex-wrap gap-2 mb-3">
         <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs text-slate-600 bg-slate-100 px-2.5 py-1 rounded-full">
-          <course.durationIcon size={12} className="text-[#0090D4]" />
+          <course.durationIcon size={12} className={course.iconColor} />
           {course.duration}
         </span>
         <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs text-slate-600 bg-slate-100 px-2.5 py-1 rounded-full">
-          <course.examsIcon size={12} className="text-[#0090D4]" />
+          <course.examsIcon size={12} className={course.iconColor} />
           {course.exams}
         </span>
       </div>
 
       <Link
         to={`/courses#${course.id}`}
-        className="inline-flex items-center text-xs sm:text-sm text-[#0090D4] font-semibold hover:text-[#EF4444] transition-colors gap-1"
+        className={`inline-flex items-center text-xs sm:text-sm ${course.iconColor} font-semibold opacity-90 hover:opacity-100 transition-opacity gap-1`}
       >
         View Details <ArrowRight size={14} />
       </Link>

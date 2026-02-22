@@ -25,7 +25,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="font-sans text-slate-600 bg-white antialiased">
-        <AnnouncementBar />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
