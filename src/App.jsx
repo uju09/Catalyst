@@ -15,8 +15,8 @@ import { Courses, Results, Contact, KnowledgeCorner } from './pages';
 const HomePage = () => (
   <>
     <Hero />
-    <Programs />
     <Reviews />
+    <Programs />
     <Features />
   </>
 );
