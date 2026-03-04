@@ -89,10 +89,11 @@ export const Navbar = () => {
   return (
     <nav className="relative w-full bg-white z-50 shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-14 sm:h-20">
           {/* Brand Logo */}
           <Link to="/" className="cursor-pointer hover:opacity-90 transition-opacity" onClick={() => handleNavClick('/')}>
-            <Logo size="default" />
+            <span className="hidden sm:block"><Logo size="default" /></span>
+            <span className="block sm:hidden"><Logo size="small" /></span>
           </Link>
 
           {/* Desktop Menu */}

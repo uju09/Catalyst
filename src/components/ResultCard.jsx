@@ -31,33 +31,8 @@ export const ResultCard = ({ name, rank, college, branch, image, className }) =>
         <path d="M0 400V350C300 450 600 350 800 250C950 150 1080 200 1080 200V400H0Z" fill="#EE3F46" />
       </svg>
 
-      {/* ================= HEADER ================= */}
-      <header className="relative z-20 flex justify-between items-center px-[5cqw] pt-[4cqw] pb-[2cqw] w-full">
-        {/* Logo */}
-        <div className="flex items-center gap-[1.5cqw]">
-          <div className="flex items-center justify-center w-[7cqw] h-[7cqw] border-[0.4cqw] border-[#EE3F46] rounded-[1.2cqw] bg-white text-[#008DD2] font-black leading-none shadow-md">
-            <span className="text-[4cqw] font-display ml-[0.2cqw]">
-              C<sup className="text-[2.2cqw] relative -top-[0.6em] -left-[0.05em]">3</sup>
-            </span>
-          </div>
-          <div className="leading-tight">
-            <h2 className="font-extrabold text-[3.5cqw] text-[#0A1E3F] tracking-wide font-display uppercase">
-              Catalyst
-            </h2>
-            <h3 className="font-bold text-[1.5cqw] text-slate-400 tracking-[0.15em] uppercase">
-              Coaching Classes
-            </h3>
-          </div>
-        </div>
-
-        {/* Badge */}
-        <div className="bg-gradient-to-r from-[#EE3F46] to-[#d42f36] text-white font-black px-[3cqw] py-[1.2cqw] rounded-full text-[2cqw] uppercase tracking-widest shadow-lg">
-          ⭐ PROUD
-        </div>
-      </header>
-
       {/* ================= PHOTO + INFO ================= */}
-      <main className="relative z-20 flex-1 flex flex-col items-center px-[5cqw] pb-[4cqw]">
+      <main className="relative z-20 flex-1 flex flex-col items-center px-[5cqw] pt-[4cqw] pb-[4cqw]">
 
         {/* Student Photo */}
         <div className="relative w-[40cqw] h-[40cqw] mb-[4cqw]">
@@ -101,28 +76,8 @@ export const ResultCard = ({ name, rank, college, branch, image, className }) =>
           </div>
         </div>
 
-        {/* Rank */}
-        {rank && (
-          <p className="text-[#EE3F46] font-black text-[3cqw] uppercase tracking-wider text-center">
-            {rank}
-          </p>
-        )}
       </main>
 
-      {/* ================= FOOTER ================= */}
-      <footer className="relative z-30 px-[5cqw] pb-[4cqw] flex justify-between items-center">
-        <p className="text-[2.2cqw] font-black text-[#0090D4] uppercase tracking-wide leading-tight">
-          Join Catalyst<br />Super 13
-        </p>
-        <div className="bg-[#0A1E3F] text-white rounded-full px-[2.5cqw] py-[1.2cqw] flex items-center gap-[1cqw] shadow-lg">
-          <div className="bg-[#EE3F46] p-[1cqw] rounded-full text-white">
-            <svg className="w-[2.5cqw] h-[2.5cqw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-          </div>
-          <p className="text-[2.2cqw] font-black leading-none">Call Us</p>
-        </div>
-      </footer>
 
     </div>
   );

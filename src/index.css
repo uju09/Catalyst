@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-yellowText: #fdda5f;
+  --color-brand-blueDark: #082254;
+  --color-brand-bookRed: #ea4f38;
+  --color-brand-bookRedSpine: #c2331f;
+  --color-brand-bookTeal: #1c888b;
+  --color-brand-bookTealSpine: #105c5e;
+  --color-brand-bookPages: #fdf2d1;
+  --font-serif: 'Playfair Display', serif;
+  --font-title: 'Oswald', sans-serif;
+}
+
+
 /* Custom base styles */
-html {
+html,
+body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -187,4 +202,67 @@ body {
 .hover-glow:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 20px 40px -12px rgba(0, 144, 212, 0.25);
+}
+
+/* =========================================
+   Courses Slide Custom CSS
+   ========================================= */
+.glass-highlight {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.card-body-pattern {
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0, 0, 0, 0.03) 39px, rgba(0, 0, 0, 0.03) 40px);
+  background-color: #fdfdfd;
+}
+
+.check-shadow {
+  filter: drop-shadow(0px 3px 2px rgba(34, 197, 94, 0.4));
+}
+
+/* =========================================
+   Knowledge Corner Slide Custom CSS
+   ========================================= */
+
+.text-shadow-3d {
+  text-shadow:
+    1px 1px 0 var(--color-brand-blueDark),
+    2px 2px 0 var(--color-brand-blueDark),
+    3px 3px 0 var(--color-brand-blueDark),
+    4px 4px 0 var(--color-brand-blueDark),
+    5px 5px 0 var(--color-brand-blueDark),
+    6px 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.text-shadow-sm {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+@keyframes float-icon {
+  0% {
+    transform: translateY(0px) rotate(var(--rot, 0deg));
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(calc(var(--rot, 0deg) + 6deg));
+  }
+
+  100% {
+    transform: translateY(0px) rotate(var(--rot, 0deg));
+  }
+}
+
+.bg-icon {
+  animation: float-icon 7s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+.bg-icon-slow {
+  animation: float-icon 9s ease-in-out infinite reverse;
+  mix-blend-mode: screen;
 }

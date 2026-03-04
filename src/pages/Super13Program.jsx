@@ -1,217 +1,261 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  Zap, Calendar, Target, BookOpen, ArrowRight, Award,
-  Clock, GraduationCap, User, Phone, Send, CheckCircle,
-  BarChart3, Timer, CalendarDays, Activity
-} from 'lucide-react';
-
-const targetExams = ['JEE Mains', 'JEE Advanced', 'BITSAT', 'MHTCET', 'IISER', 'UGEE'];
-const subjects = ['Physics', 'Chemistry', 'Maths'];
+import React, { useEffect } from 'react';
+import { BookOpen } from 'lucide-react';
 
 export const Super13Program = () => {
-  const [form, setForm] = useState({ name: '', phone: '', currentClass: '' });
-  const [submitted, setSubmitted] = useState(false);
-
-  useEffect(() => { window.scrollTo(0, 0); }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('SUPER-13 interest:', form);
-    setSubmitted(true);
-    setTimeout(() => { setSubmitted(false); setForm({ name: '', phone: '', currentClass: '' }); }, 3000);
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0A1E3F] via-[#0060A0] to-[#0090D4] text-white py-8 sm:py-14 relative overflow-hidden">
-        <div className="absolute top-10 right-16 w-36 h-36 bg-blue-400/10 rounded-full blur-2xl"></div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-2.5 sm:gap-3 mb-2">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shrink-0">
-              <Zap size={20} className="text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl sm:text-3xl font-extrabold leading-tight">SUPER-13 Integrated Program</h1>
-              <p className="text-blue-300 text-xs sm:text-sm font-semibold">For 10th Std · 2-Year Program</p>
-            </div>
+    <div className="bg-[#f4f7fb] text-[#0f172a] font-sans pb-10" style={{ WebkitFontSmoothing: 'antialiased' }}>
+      {/* HERO SECTION */}
+      <div className="relative bg-gradient-to-br from-[#0f4c9c] to-[#1e62c5] overflow-hidden pt-8 sm:pt-12 pb-16 sm:pb-24 md:pt-16 md:pb-32 px-3 sm:px-6 lg:px-8">
+        {/* Background Image area (right side) */}
+        <div className="absolute top-0 right-0 w-full md:w-3/5 h-full opacity-20 md:opacity-90 transition-opacity duration-300 pointer-events-none">
+          {/* Gradient overlay to blend image into background smoothly */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0f4c9c] via-[#0f4c9c]/80 to-transparent z-10 hidden md:block"></div>
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
+            alt="Students studying collaboratively"
+            className="w-full h-full object-cover object-center"
+            style={{ maskImage: 'linear-gradient(to right, transparent, black 40%)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 40%)' }} />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-start">
+          <div className="max-w-3xl">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 sm:mb-4 tracking-tight">
+              SUPER-13 Integrated <br className="hidden md:block" />
+              Mentorship Program
+            </h1>
+            <h2 className="text-base sm:text-xl md:text-2xl font-semibold text-white mb-4 sm:mb-6">
+              For Class 10 Students Serious About IIT, NIT & Top Engineering Colleges.
+            </h2>
+            <div className="h-1 w-12 sm:w-16 bg-white/30 rounded mb-4 sm:mb-6"></div>
+            <p className="text-sm sm:text-base md:text-lg text-blue-100 max-w-2xl leading-relaxed">
+              A 2-Year High-Intensity Academic Program Designed to Build Top <span className="font-bold text-white">JEE Performers</span> — Not Average Aspirants.
+            </p>
           </div>
-          <p className="text-white/50 text-xs sm:text-sm max-w-2xl mt-1 italic">
-            2-Year roadmap for Engineering Competitions — JEE, MHTCET, BITSAT & more.
+        </div>
+      </div>
+
+      {/* MAIN CONTENT WRAPPER (Pulled up over hero) */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 relative z-30">
+
+        {/* Timeline & Exams Info Bar */}
+        <div className="bg-white rounded-xl md:rounded-full shadow-lg border border-gray-100 p-3 sm:p-4 md:py-4 md:px-8 flex flex-col md:flex-row items-center justify-center gap-2 sm:gap-4 md:gap-8 mb-6 sm:mb-8 text-xs sm:text-sm md:text-base text-[#0f172a] font-medium">
+          <div className="flex items-center gap-2">
+            <i className="ph ph-calendar-blank text-[#3b82f6] text-xl"></i>
+            <span>April 2026 – May 2028</span>
+          </div>
+          <div className="hidden md:block w-px h-6 bg-gray-200"></div>
+          <div className="flex flex-wrap justify-center items-center gap-2 text-center">
+            <i className="ph ph-stack text-[#3b82f6] text-xl"></i>
+            <span className="text-[#64748b]">JEE Main</span>
+            <span className="text-gray-300">|</span>
+            <span>JEE Advanced</span>
+            <span className="text-gray-300">|</span>
+            <span className="text-[#64748b]">BITSAT</span>
+            <span className="text-gray-300">|</span>
+            <span className="text-[#64748b]">MHT-CET</span>
+          </div>
+        </div>
+
+        {/* Alert Banner (Top) */}
+        <div className="bg-[#fef3c7]/80 border border-yellow-200 rounded-xl md:rounded-full py-2 sm:py-3 px-4 sm:px-6 flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 mx-auto max-w-4xl shadow-sm">
+          <i className="ph-fill ph-lightning text-yellow-500 text-lg sm:text-xl animate-pulse"></i>
+          <p className="text-yellow-800 font-medium text-xs sm:text-sm md:text-base text-center">
+            <span className="font-bold">Limited to Only 13 Focused Students Per Batch</span> for Personal Mentorship.
           </p>
         </div>
-      </section>
 
-      {/* Main Content — Grid Layout */}
-      <section className="py-6 sm:py-10">
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5">
+        {/* TWO COLUMN LAYOUT */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
 
-            {/* LEFT COLUMN */}
-            <div className="lg:col-span-2 space-y-4">
+          {/* LEFT COLUMN (Content) */}
+          <div className="lg:col-span-7 xl:col-span-8 flex flex-col gap-10">
 
-              {/* Quick Info Row */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
-                <div className="bg-white rounded-xl p-3.5 shadow-sm border border-gray-100">
-                  <Calendar size={14} className="text-[#0090D4] mb-1" />
-                  <p className="text-[10px] text-slate-400 font-bold">Duration</p>
-                  <p className="text-[#0090D4] font-extrabold text-xs sm:text-sm mt-0.5">Apr 2026 – May 2028</p>
-                  <p className="text-slate-300 text-[8px]">incl. bridge course</p>
+            {/* Section 1: What Child Gets */}
+            <section>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1e40af] mb-4 sm:mb-6">What Your Child Gets in 2 Years</h3>
+              <div className="space-y-3">
+                {/* List Items */}
+                <div className="bg-white rounded-lg p-4 border border-gray-100 flex items-center gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 transition-transform duration-200">
+                  <i className="ph-fill ph-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+                  <p className="text-gray-700 text-lg"><span className="font-bold text-[#0f172a]">3000+ Hours</span> of Structured Academic Training</p>
                 </div>
-                <div className="bg-white rounded-xl p-3.5 shadow-sm border border-gray-100">
-                  <BookOpen size={14} className="text-purple-500 mb-1" />
-                  <p className="text-[10px] text-slate-400 font-bold">Subjects</p>
-                  <div className="flex flex-wrap gap-1 mt-1">
-                    {subjects.map((s) => (
-                      <span key={s} className="px-1.5 py-0.5 bg-blue-50 text-[#0090D4] text-[9px] font-bold rounded-full">{s}</span>
-                    ))}
-                  </div>
+                <div className="bg-white rounded-lg p-4 border border-gray-100 flex items-center gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 transition-transform duration-200">
+                  <i className="ph-fill ph-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+                  <p className="text-gray-700 text-lg"><span className="font-bold text-[#0f172a]">6 Days/Week</span> Academic Immersion</p>
                 </div>
-                <div className="bg-white rounded-xl p-3.5 shadow-sm border border-gray-100">
-                  <GraduationCap size={14} className="text-orange-500 mb-1" />
-                  <p className="text-[10px] text-slate-400 font-bold">Faculty</p>
-                  <p className="text-slate-700 font-bold text-xs mt-0.5">IITians & NITians</p>
-                  <p className="text-slate-300 text-[8px]">10+ yrs experience</p>
+                <div className="bg-white rounded-lg p-4 border border-gray-100 flex items-center gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 transition-transform duration-200">
+                  <i className="ph-fill ph-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+                  <p className="text-gray-700 text-lg"><span className="font-bold text-[#0f172a]">Daily 5+ Hours</span> of Focused Learning</p>
                 </div>
-                <div className="bg-white rounded-xl p-3.5 shadow-sm border border-gray-100">
-                  <Target size={14} className="text-red-500 mb-1" />
-                  <p className="text-[10px] text-slate-400 font-bold">Target Exams</p>
-                  <div className="flex flex-wrap gap-0.5 mt-1">
-                    {targetExams.map((e) => (
-                      <span key={e} className="px-1 py-0.5 bg-red-50 text-red-500 text-[7px] sm:text-[8px] font-bold rounded-full">{e}</span>
-                    ))}
-                  </div>
+                <div className="bg-white rounded-lg p-4 border border-gray-100 flex items-center gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 transition-transform duration-200">
+                  <i className="ph-fill ph-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+                  <p className="text-gray-700 text-lg">Continuous Performance Tracking</p>
                 </div>
               </div>
+            </section>
 
-              {/* Bridge Course */}
-              <div className="bg-gradient-to-br from-amber-50/80 to-orange-50/50 rounded-xl p-4 sm:p-5 border border-amber-100">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="px-2 py-0.5 bg-amber-400 text-white text-[8px] font-bold rounded-full uppercase">Mandatory</span>
-                  <h3 className="font-extrabold text-slate-800 text-sm sm:text-base">Bridge Course</h3>
-                  <span className="text-slate-400 text-[10px] ml-auto">Starts 6th April 2026</span>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                  {[
-                    { title: 'Smooth Transition', desc: '2-week prep for diverse boards' },
-                    { title: 'Foundation First', desc: 'Class 9–10 fundamentals for JEE' },
-                    { title: 'Analytical Edge', desc: 'JEE-style problem-solving intro' },
-                  ].map((f, i) => (
-                    <div key={i} className="bg-white rounded-lg p-2.5 border border-amber-100/50">
-                      <p className="text-orange-500 font-bold text-[10px] sm:text-xs mb-0.5">{f.title}</p>
-                      <p className="text-slate-500 text-[9px] sm:text-[10px] leading-tight">{f.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-2.5 bg-yellow-50 rounded-lg px-3 py-2 flex items-center gap-1.5 border border-yellow-200">
-                  <Award size={12} className="text-yellow-600 shrink-0" />
-                  <p className="text-[9px] sm:text-[10px] text-yellow-800 font-medium">Scholarship Test at end of Bridge Course — earn exciting scholarships!</p>
-                </div>
-              </div>
-
-              {/* SUPER 13 Advantage — Stats + Timings Side by Side */}
-              <div className="bg-white rounded-xl p-4 sm:p-5 shadow-sm border border-gray-100">
-                <h3 className="text-sm sm:text-base font-extrabold text-slate-800 mb-0.5">The SUPER 13 Advantage</h3>
-                <p className="text-slate-400 text-[10px] mb-3">Highest contact classroom program in the industry</p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
-                  {[
-                    { icon: BarChart3, label: 'Engagement', val: '3000+', unit: 'Hrs' },
-                    { icon: Timer, label: 'Testing', val: '300+', unit: 'Hrs' },
-                    { icon: CalendarDays, label: 'Schedule', val: '6 Days', unit: '/Week' },
-                    { icon: Activity, label: 'Daily', val: '5', unit: 'hrs/day' },
-                  ].map((s, i) => (
-                    <div key={i} className="bg-slate-50 rounded-lg p-2.5 text-center">
-                      <s.icon size={12} className="text-[#0090D4] mx-auto mb-1" />
-                      <p className="text-[8px] text-slate-400 font-bold">{s.label}</p>
-                      <p className="text-[#0090D4] font-extrabold text-sm sm:text-lg leading-tight">{s.val}<span className="text-[10px] font-bold"> {s.unit}</span></p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Timings inline */}
-                <div className="bg-gradient-to-r from-[#0090D4] to-[#0070A4] rounded-lg p-3 sm:p-4">
-                  <div className="flex items-center gap-2 mb-2 text-white">
-                    <Clock size={14} />
-                    <span className="font-bold text-xs">Timings — 2 Formats</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="bg-white rounded-md p-2.5">
-                      <p className="text-red-500 text-[9px] font-bold">Morning</p>
-                      <p className="text-slate-800 font-extrabold text-sm sm:text-base">8 AM – 2 PM</p>
-                    </div>
-                    <div className="bg-white rounded-md p-2.5">
-                      <p className="text-red-500 text-[9px] font-bold">Evening</p>
-                      <p className="text-slate-800 font-extrabold text-sm sm:text-base">2:30 – 8:30 PM</p>
-                    </div>
-                  </div>
-                  <p className="text-white/40 text-[8px] mt-2 italic">Closed 6 days during Diwali</p>
-                </div>
-              </div>
+            {/* Small Alert Banner */}
+            <div className="bg-[#fef3c7]/80 border border-yellow-200 rounded-lg py-3 px-5 flex items-center justify-start gap-3 shadow-sm">
+              <i className="ph-fill ph-drop text-yellow-500 text-lg"></i>
+              <p className="text-yellow-800 font-medium text-sm md:text-base">
+                <span className="font-bold">Performance-Based Scholarships Available</span> After Bridge Program
+              </p>
             </div>
 
-            {/* RIGHT COLUMN — Sidebar */}
-            <div className="space-y-4">
-
-              {/* Interest Form */}
-              <div className="relative bg-white rounded-xl p-4 sm:p-5 shadow-lg border border-blue-100 overflow-hidden">
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-100 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-purple-50 rounded-full blur-lg"></div>
-                <div className="relative z-10">
-                  <h3 className="text-sm sm:text-base font-extrabold text-slate-800 mb-0.5">Get Started</h3>
-                  <p className="text-slate-400 text-[10px] mb-3">Course details & eligibility info</p>
-                  {submitted ? (
-                    <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2.5 text-green-700 text-center text-xs font-bold">
-                      <CheckCircle size={14} className="inline mr-1" />We'll contact you soon!
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-2">
-                      <div className="relative">
-                        <User size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-blue-400" />
-                        <input type="text" placeholder="Parent / Student Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-                          className="pl-7 pr-2 py-2.5 rounded-lg text-xs text-slate-800 bg-slate-50 border border-slate-200 w-full outline-none placeholder-slate-400 focus:border-blue-400 focus:bg-white transition-all" />
-                      </div>
-                      <div className="relative">
-                        <Phone size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-blue-400" />
-                        <input type="tel" placeholder="Mobile Number" required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                          className="pl-7 pr-2 py-2.5 rounded-lg text-xs text-slate-800 bg-slate-50 border border-slate-200 w-full outline-none placeholder-slate-400 focus:border-blue-400 focus:bg-white transition-all" />
-                      </div>
-                      <select value={form.currentClass} onChange={(e) => setForm({ ...form, currentClass: e.target.value })} required
-                        className="px-2 py-2.5 rounded-lg text-xs text-slate-600 bg-slate-50 border border-slate-200 w-full outline-none focus:border-blue-400 transition-all">
-                        <option value="">Current Class</option>
-                        <option value="10th">10th Std</option>
-                      </select>
-                      <button type="submit" className="w-full px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-xs rounded-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center gap-1.5 justify-center">
-                        <Send size={12} /> Request Details
-                      </button>
-                    </form>
-                  )}
+            {/* Section 2: Bridge Program */}
+            <section>
+              <h3 className="text-2xl font-bold text-[#1e40af] mb-3">Mandatory Academic Bridge Program</h3>
+              <p className="text-gray-600 mb-6 text-base md:text-lg">
+                Before the main batch begins, every student undergoes a structured academic bridge to:
+              </p>
+              <div className="space-y-3">
+                {/* List Items */}
+                <div className="bg-white rounded-lg p-4 border border-gray-100 flex items-center gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 transition-transform duration-200">
+                  <i className="ph-fill ph-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+                  <p className="text-gray-700 text-lg">Strengthen Class 9–10 <span className="font-bold text-[#0f172a]">fundamentals</span></p>
+                </div>
+                <div className="bg-white rounded-lg p-4 border border-gray-100 flex items-center gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 transition-transform duration-200">
+                  <i className="ph-fill ph-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+                  <p className="text-gray-700 text-lg">Introduce <span className="font-bold text-[#0f172a]">JEE-style thinking</span> early</p>
+                </div>
+                <div className="bg-white rounded-lg p-4 border border-gray-100 flex items-center gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 transition-transform duration-200">
+                  <i className="ph-fill ph-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+                  <p className="text-gray-700 text-lg">Align students from different school boards</p>
+                </div>
+                <div className="bg-white rounded-lg p-4 border border-gray-100 flex items-center gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 transition-transform duration-200">
+                  <i className="ph-fill ph-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+                  <p className="text-gray-700 text-lg">Prepare them for <span className="font-bold text-[#0f172a]">competitive intensity</span></p>
                 </div>
               </div>
+            </section>
 
-              {/* CTA Card */}
-              <div className="bg-gradient-to-br from-[#0A1E3F] to-[#0060A0] rounded-xl p-4 sm:p-5 text-white">
-                <h4 className="font-bold text-sm mb-1">Not sure which exam is right?</h4>
-                <p className="text-white/50 text-[10px] mb-3">Our Knowledge Corner has everything mapped out.</p>
-                <Link to="/knowledge-corner" className="inline-flex items-center gap-1 px-4 py-2 bg-white text-[#0090D4] font-bold text-xs rounded-full hover:shadow-lg transition-all">
-                  Explore <ArrowRight size={12} />
-                </Link>
-              </div>
+            {/* Small Alert Banner (Repeated as in design) */}
+            <div className="bg-[#fef3c7]/80 border border-yellow-200 rounded-lg py-3 px-5 flex items-center justify-start gap-3 shadow-sm mb-8 lg:mb-0">
+              <i className="ph-fill ph-drop text-yellow-500 text-lg"></i>
+              <p className="text-yellow-800 font-medium text-sm md:text-base">
+                <span className="font-bold">Performance-Based Scholarships Available</span> After Bridge Program
+              </p>
+            </div>
 
-              {/* Quick Contact */}
-              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-                <h4 className="font-bold text-slate-700 text-xs mb-2">Quick Contact</h4>
-                <a href="tel:+917758884678" className="flex items-center gap-2 text-[#0090D4] text-xs font-semibold hover:underline mb-1">
-                  <Phone size={12} /> +91 7758884678
+          </div>
+
+          {/* RIGHT COLUMN (Forms & Results) */}
+          <div className="lg:col-span-5 xl:col-span-4 flex flex-col gap-6">
+
+            {/* Form Card */}
+            <div className="bg-white rounded-2xl shadow-xl shadow-blue-900/5 p-6 md:p-8 border border-gray-100">
+              <h4 className="text-xl font-bold text-[#0f172a] mb-2">Schedule a Free <br /> Academic Strategy Session</h4>
+              <p className="text-gray-500 text-sm mb-6">Discuss your child's academic goals and get a personalized roadmap.</p>
+
+              <form className="space-y-4">
+                {/* Input 1 */}
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                    <i className="ph ph-user text-gray-400 text-lg"></i>
+                  </div>
+                  <input type="text" className="bg-gray-50 border border-gray-200 text-[#0f172a] text-sm rounded-lg focus:ring-[#3b82f6] focus:border-[#3b82f6] block w-full pl-10 p-3 transition-colors" placeholder="Parent/Student Name" required />
+                </div>
+
+                {/* Input 2 (Select styled as input) */}
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                    <i className="ph ph-lock-key text-gray-400 text-lg"></i>
+                  </div>
+                  <select defaultValue="" className="bg-gray-50 border border-gray-200 text-[#0f172a] text-sm rounded-lg focus:ring-[#3b82f6] focus:border-[#3b82f6] block w-full pl-10 p-3 appearance-none transition-colors" required>
+                    <option value="" disabled className="text-gray-400">Current Class</option>
+                    <option value="9">Class 9</option>
+                    <option value="10">Class 10</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                    <i className="ph ph-caret-down text-gray-400"></i>
+                  </div>
+                </div>
+
+                {/* Input 3 */}
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                    <i className="ph ph-phone text-gray-400 text-lg"></i>
+                  </div>
+                  <input type="tel" className="bg-gray-50 border border-gray-200 text-[#0f172a] text-sm rounded-lg focus:ring-[#3b82f6] focus:border-[#3b82f6] block w-full pl-10 p-3 transition-colors" placeholder="Mobile Number" required />
+                </div>
+
+                {/* Submit Button */}
+                <button type="submit" className="w-full text-white bg-[#3b82f6] hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3.5 flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-blue-500/30 mt-2">
+                  <i className="ph ph-paper-plane-right text-xl"></i>
+                  Book My Counselling Slot
+                </button>
+              </form>
+
+              {/* Contact Methods */}
+              <div className="mt-6 flex flex-col gap-3 justify-center items-center pt-5 border-t border-gray-100">
+                <a href="tel:+917758884678" className="flex items-center gap-2 text-[#0f172a] hover:text-[#3b82f6] font-medium transition-colors">
+                  <i className="ph-fill ph-phone-call text-green-600 text-xl"></i>
+                  +91-7758884678
                 </a>
-                <a href="tel:+918999519632" className="flex items-center gap-2 text-[#0090D4] text-xs font-semibold hover:underline">
-                  <Phone size={12} /> +91 8999519632
+                <a href="#" className="flex items-center gap-2 text-[#0f172a] hover:text-green-600 font-medium transition-colors">
+                  <i className="ph-fill ph-whatsapp-logo text-green-600 text-xl"></i>
+                  Message us on WhatsApp
                 </a>
               </div>
             </div>
+
+            {/* Results Card */}
+            <div className="bg-white rounded-2xl shadow-xl shadow-blue-900/5 p-6 md:p-8 border border-gray-100">
+              <h4 className="text-xl font-bold text-[#0f172a] mb-5">Proven Results</h4>
+
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <i className="ph-fill ph-check-circle text-green-600 text-xl mt-0.5"></i>
+                  <p className="text-gray-700 text-sm md:text-base">Multiple <span className="font-bold text-[#0f172a]">99+ Percentile Scorers</span></p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <i className="ph-fill ph-check-circle text-green-600 text-xl mt-0.5"></i>
+                  <p className="text-gray-700 text-sm md:text-base"><span className="font-bold text-[#0f172a]">Consistent</span> JEE Main Qualifiers</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <i className="ph-fill ph-check-circle text-green-600 text-xl mt-0.5"></i>
+                  <p className="text-gray-700 text-sm md:text-base">Strong Track Record in Competitive Exams</p>
+                </div>
+              </div>
+
+              <a
+                href="/SUPER13.pdf"
+                download="SUPER-13-Brochure"
+                className="w-full text-white bg-gradient-to-b from-[#18489a] to-[#0f3d8a] hover:from-[#133e85] hover:to-[#0a3175] focus:ring-4 focus:ring-blue-300 font-medium rounded-xl text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-md border-[3px] border-[#93c5fd]/50"
+              >
+                <BookOpen size={20} />
+                Download Brochure
+              </a>
+            </div>
+
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* BOTTOM CTA BANNER */}
+      <div className="mt-16 w-full bg-gradient-to-br from-[#0f4c9c] to-[#1e62c5] py-8 px-4 sm:px-6 lg:px-8 shadow-inner">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Ready to Start <span className="font-light">the Journey to IIT?</span>
+            </h3>
+            <p className="text-blue-100 text-sm md:text-base">
+              Serious preparation requires <span className="font-bold text-white">serious commitment.</span><br />
+              <span className="font-bold text-white">Seats</span> are limited to 13 students only.
+            </p>
+          </div>
+
+          <button type="button" className="text-[#1e40af] bg-white hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-base px-8 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-xl flex-shrink-0">
+            <i className="ph ph-paper-plane-right text-xl"></i>
+            Secure Your Seat for 2026 Batch
+          </button>
+        </div>
+      </div>
+
     </div>
   );
 };

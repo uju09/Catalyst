@@ -8,3 +8,5 @@ export { Reviews } from './Reviews';
 export { Footer } from './Footer';
 export { KnowledgeCornerPreview } from './KnowledgeCornerPreview';
 export { Courses } from '../pages/Courses';
+export { WhyChooseUs } from './WhyChooseUs';
+export { ResultsSection } from './ResultsSection';
