@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const resultsData = [
-  { name: 'Akash Nair', college: 'IIT Madras', image: '/results/Akash Nair.jpg' },
-  { name: 'Indrajeet Mohite', college: 'IIT Bombay', image: '/results/Indrajeet Mohite.png' },
-  { name: 'Vishwajeet Natu', college: 'IIT Bombay', image: '/results/Vishwajeet Natu.png' },
-  { name: 'Advait Kisar', college: 'IIT Madras', image: '/results/Advait Kisar.png' },
-  { name: 'Atharva Joshi', college: 'IIT Hyderabad', image: '/results/Atharva Joshi.png' },
-  { name: 'Sujal Diwedi', college: 'VJTI Mumbai', image: '/results/Sujal Dwivedi.png' },
-  { name: 'Jaswant Rajput', college: 'AIIMS Patna', image: '/results/Jaswant Rajput.jpeg' },
-  { name: 'Paresh Deshmukh', college: 'BITS Pilani', image: '/results/Paresh Deshmukh.jpeg' },
-  { name: 'Tejas Bobabe', college: 'NIT Calicut', image: '/results/Tejas Bobabe.jpeg' },
-  { name: 'Ujjwal Akotkar', college: 'IIT Dharwad', image: 'https://ui-avatars.com/api/?name=Ujjwal+Akotkar&background=1e293b&color=fff&size=256&bold=true' }
+  { name: 'Akash Nair', college: 'IIT Madras', image: '/result/akash.jpeg' },
+  { name: 'Indrajeet Mohite', college: 'IIT Bombay', image: '/result/indrajeet.jpeg' },
+  { name: 'Vishwajeet Natu', college: 'IIT Bombay', image: '/result/vishwajeet.jpeg' },
+  { name: 'Advait Kisar', college: 'IIT Madras', image: '/result/advait.jpeg' },
+  { name: 'Atharva Joshi', college: 'IIT Hyderabad', image: '/result/atharva.jpeg' },
+  { name: 'Sujal Diwedi', college: 'VJTI Mumbai', image: '/result/sujal.jpeg' },
+  { name: 'Jaswant Rajput', college: 'AIIMS Patna', image: '/result/jaswant.jpeg' },
+  { name: 'Paresh Deshmukh', college: 'BITS Pilani', image: '/result/paresh.jpeg' },
+  { name: 'Tejas Bobabe', college: 'NIT Calicut', image: '/result/tejas.jpeg' },
+  { name: 'Ujwal Akotkar', college: 'IIIT Dharwad', image: '/result/uju.png' },
 ];
 
 const MOBILE_INITIAL_COUNT = 4;
