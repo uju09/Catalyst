@@ -1,9 +1,9 @@
 import { Phone, Mail, MapPin, Globe, Facebook, Instagram, Youtube } from 'lucide-react';
 
 export const Footer = () => (
-  <footer id="contact" className="bg-[#0090D4] text-white pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8">
+  <footer id="contact" className="bg-[#0090D4] text-white pt-6 sm:pt-12 md:pt-16 pb-4 sm:pb-8">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 md:gap-12 mb-6 sm:mb-12">
         {/* Brand */}
         <div className="sm:col-span-2 lg:col-span-2">
           {/* Footer Logo - C³ */}
@@ -44,7 +44,7 @@ export const Footer = () => (
             </li>
             <li className="flex gap-2 sm:gap-3">
               <MapPin size={16} className="mt-0.5 text-[#EF4444] shrink-0 sm:w-[18px] sm:h-[18px]" />
-              <span><strong className="text-white">Vikas Nagar:</strong><br />Vision Aristo, Near Mukai Chowk</span>
+              <span><strong className="text-white">Vikas Nagar:</strong><br />Shop#4, Vision Aristo, Vikas Nagar, Near Mukai Chowk, Kiwale</span>
             </li>
           </ul>
         </div>

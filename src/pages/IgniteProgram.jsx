@@ -1,189 +1,286 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  Flame, Calendar, Target, BookOpen, ArrowRight,
-  User, Phone, Send, Zap, Clock, Brain, BookMarked,
-  CheckCircle, Sparkles
-} from 'lucide-react';
-
-const subjects9th = ['Physics', 'Chemistry', 'Biology', 'Maths', 'SST', 'English', 'Mental Ability'];
-const subjects8th = ['Physics', 'Chemistry', 'Biology', 'Maths', 'Mental Ability'];
-const targetCompetitions = ['NSEJS', 'IJSO', 'IOQM', 'RMO', 'NSE'];
+import React, { useEffect } from 'react';
+import { BookOpen } from 'lucide-react';
 
 export const IgniteProgram = () => {
-  const [form, setForm] = useState({ name: '', phone: '', currentClass: '' });
-  const [submitted, setSubmitted] = useState(false);
-
-  useEffect(() => { window.scrollTo(0, 0); }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('IGNITE interest:', form);
-    setSubmitted(true);
-    setTimeout(() => { setSubmitted(false); setForm({ name: '', phone: '', currentClass: '' }); }, 3000);
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0A1E3F] via-[#0060A0] to-[#0090D4] text-white py-8 sm:py-14 relative overflow-hidden">
-        <div className="absolute top-8 right-12 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl"></div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-2.5 sm:gap-3 mb-2">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-lg shrink-0">
-              <Flame size={20} className="text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl sm:text-3xl font-extrabold leading-tight">IGNITE Foundation Program</h1>
-              <p className="text-orange-300 text-xs sm:text-sm font-semibold">For students in 7th or 8th Std</p>
+    <div className="text-[#1f2937] font-sans pb-10 bg-[#f9faf8]" style={{ backgroundImage: 'radial-gradient(#e5e7eb 1px, transparent 1px)', backgroundSize: '40px 40px', WebkitFontSmoothing: 'antialiased' }}>
+      {/* HERO SECTION */}
+      <div className="relative bg-[#1b3b2b] overflow-hidden pt-6 sm:pt-8 pb-20 sm:pb-32 px-3 sm:px-6 lg:px-8">
+        {/* Abstract Curve Background */}
+        <div className="absolute top-0 right-0 w-[60%] h-full z-10 pointer-events-none" style={{ background: 'radial-gradient(circle at top right, rgba(234, 179, 8, 0.15), transparent 60%)' }}></div>
+
+        {/* Decorative Vector Blob */}
+        <svg className="absolute right-0 top-0 h-full w-2/3 object-cover opacity-30 z-0 text-[#eab308] pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor">
+          <path d="M0,0 C40,20 60,80 100,100 L100,0 Z"></path>
+        </svg>
+
+        {/* Background Image area (right side) */}
+        <div className="absolute top-0 right-0 w-full md:w-1/2 h-full opacity-30 md:opacity-90 transition-opacity duration-300 pointer-events-none z-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1b3b2b] via-[#1b3b2b]/80 to-transparent z-10 hidden md:block"></div>
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop"
+            alt="Teacher helping students"
+            className="w-full h-full object-cover object-center rounded-bl-[100px]"
+            style={{ maskImage: 'linear-gradient(to right, transparent, black 30%)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 30%)' }} />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-start pt-6">
+          {/* Top Logo/Brand Placeholder */}
+          <div className="flex items-center gap-2 mb-4 sm:mb-8">
+            <i className="ph-fill ph-hexagon text-[#e6f0eb] text-2xl"></i>
+            <span className="text-white font-semibold tracking-wide text-lg"><span className="text-[#eab308]">Catalyst</span> Coaching Classes</span>
+          </div>
+
+          <div className="max-w-2xl">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-3 sm:mb-4 tracking-tight">
+              <span className="text-[#eab308]">IGNITE</span> Foundation Program
+            </h1>
+            <h2 className="text-base sm:text-xl md:text-2xl font-medium text-gray-200 mb-4 sm:mb-8 border-l-4 border-[#eab308] pl-3 sm:pl-4">
+              For students in <span className="font-bold text-white">8th, 9th & 10th Std</span>
+            </h2>
+
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-5 md:p-6 mb-4 sm:mb-6 w-fit">
+              <p className="text-sm sm:text-base md:text-xl text-white font-light leading-relaxed">
+                Rigorous <span className="font-bold">1-Year Foundation Program</span><br className="hidden sm:block" />
+                Designed to Excel in Academics & <span className="font-bold text-[#eab308]">Master Olympiads.</span>
+              </p>
             </div>
           </div>
-          <p className="text-white/50 text-xs sm:text-sm max-w-2xl mt-1 italic">
-            1-year roadmap to mastering academics + competitive edge in Olympiads, NSEJS & future JEE/NEET prep.
+        </div>
+      </div>
+
+      {/* MAIN CONTENT WRAPPER */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -mt-8 sm:-mt-16 relative z-30">
+
+        {/* Alert Banner Bar */}
+        <div className="bg-gradient-to-r from-yellow-50 to-[#eab308]/20 border border-yellow-200 rounded-lg py-3 px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-start gap-3 sm:gap-4 mb-6 sm:mb-12 shadow-md w-fit">
+          <i className="ph-fill ph-briefcase text-[#ea580c] text-xl sm:text-2xl animate-bounce"></i>
+          <p className="text-gray-800 font-semibold text-xs sm:text-base text-center sm:text-left">
+            Intense 1-Year Foundation Track for Competitive Excellence.
           </p>
         </div>
-      </section>
 
-      {/* Main Content — Grid Layout */}
-      <section className="py-6 sm:py-10">
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5">
+        {/* TWO COLUMN LAYOUT */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
 
-            {/* LEFT COLUMN — Program Details */}
-            <div className="lg:col-span-2 space-y-3 sm:space-y-4">
+          {/* LEFT COLUMN (Content) */}
+          <div className="lg:col-span-7 flex flex-col gap-12">
 
-              {/* Duration — Full Width */}
-              <div className="bg-white rounded-xl p-4 sm:p-5 shadow-sm border border-gray-100 flex items-center gap-3">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
-                  <Calendar size={16} className="text-[#0090D4]" />
-                </div>
-                <div>
-                  <p className="text-[10px] sm:text-xs text-slate-400 font-bold">Duration</p>
-                  <p className="text-[#0090D4] font-extrabold text-sm sm:text-lg">April 2026 – Feb 2027</p>
-                </div>
-              </div>
+            {/* Section 1: Olympiad Prep */}
+            <section>
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 flex flex-wrap gap-2 items-center">
+                Olympiad Prep <span className="text-[#ea580c]">+</span> Academic Excellence
+              </h3>
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                Every student starts with a <span className="font-bold text-gray-900">focus bridge course</span> to ensure subject mastery before diving deep into Olympiad preparation.
+              </p>
 
-              {/* Schedule + Intensity + Competitions + Subjects — 2x2 Grid */}
-              <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                <div className="bg-white rounded-xl p-3.5 sm:p-5 shadow-sm border border-gray-100 min-h-[90px]">
-                  <Clock size={14} className="text-orange-500 mb-1.5" />
-                  <p className="text-[10px] sm:text-xs text-slate-400 font-bold">Schedule</p>
-                  <p className="text-slate-700 font-bold text-xs sm:text-sm mt-0.5">3–4 Days/week</p>
-                  <p className="text-slate-400 text-[8px] sm:text-[10px]">6 PM – 9 PM</p>
-                </div>
-                <div className="bg-white rounded-xl p-3.5 sm:p-5 shadow-sm border border-gray-100 min-h-[90px]">
-                  <Zap size={14} className="text-yellow-500 mb-1.5" />
-                  <p className="text-[10px] sm:text-xs text-slate-400 font-bold">Intensity</p>
-                  <p className="text-slate-700 font-bold text-xs sm:text-sm mt-0.5">3 hrs/day</p>
-                  <p className="text-slate-400 text-[8px] sm:text-[10px]">2 subjects</p>
-                </div>
-                <div className="bg-white rounded-xl p-3.5 sm:p-5 shadow-sm border border-gray-100 min-h-[90px]">
-                  <Target size={14} className="text-red-500 mb-1.5" />
-                  <p className="text-[10px] sm:text-xs text-slate-400 font-bold mb-1.5">Target Competitions</p>
-                  <div className="flex flex-wrap gap-1">
-                    {targetCompetitions.map((c) => (
-                      <span key={c} className="px-2 py-0.5 bg-red-50 text-red-500 text-[9px] sm:text-[10px] font-bold rounded-full">{c}</span>
-                    ))}
+              <div className="space-y-6">
+                {/* List Item 1 */}
+                <div className="flex items-start gap-4 group">
+                  <i className="ph-fill ph-check-circle text-[#2d5a40] text-3xl mt-0.5 group-hover:scale-110 transition-transform"></i>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-1">Conceptual Clarity</h4>
+                    <p className="text-gray-600">Not rote learning, but mastering Physics, Chemistry, Maths, & Mental Ability.</p>
                   </div>
                 </div>
-                <div className="bg-white rounded-xl p-3.5 sm:p-5 shadow-sm border border-gray-100 min-h-[90px]">
-                  <BookOpen size={14} className="text-purple-500 mb-1.5" />
-                  <p className="text-[10px] sm:text-xs text-slate-400 font-bold mb-1.5">Subjects (9th)</p>
-                  <div className="flex flex-wrap gap-1 mb-1.5">
-                    {subjects9th.map((s) => (
-                      <span key={s} className="px-1.5 py-0.5 bg-purple-50 text-purple-600 text-[8px] sm:text-[9px] font-bold rounded-full">{s}</span>
-                    ))}
+                {/* List Item 2 */}
+                <div className="flex items-start gap-4 group">
+                  <i className="ph-fill ph-check-circle text-[#2d5a40] text-3xl mt-0.5 group-hover:scale-110 transition-transform"></i>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-1">Intensive Schedule</h4>
+                    <p className="text-gray-600">3–5 study days a week, focusing on depth and application — not shortcuts.</p>
                   </div>
-                  <p className="text-[8px] text-slate-300 font-bold">8th: {subjects8th.join(', ')}</p>
                 </div>
+                {/* List Item 3 */}
+                <div className="flex items-start gap-4 group">
+                  <i className="ph-fill ph-check-circle text-[#2d5a40] text-3xl mt-0.5 group-hover:scale-110 transition-transform"></i>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-1">Strong Foundation</h4>
+                    <p className="text-gray-600">Build the core concepts necessary for future IIT / NEET preparation.</p>
+                  </div>
+                </div>
+                {/* List Item 4 */}
+                <div className="flex items-start gap-4 group">
+                  <i className="ph-fill ph-check-circle text-[#2d5a40] text-3xl mt-0.5 group-hover:scale-110 transition-transform"></i>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-1">Outperform the Competition</h4>
+                    <p className="text-gray-600">Gain a competitive edge in NSEJS & top Olympiads.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Divider */}
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+            {/* Section 2: Key Highlights Grid */}
+            <section>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Key Highlights <span className="font-normal text-gray-500">of the IGNITE Foundation</span>
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                {/* Highlight Card 1 */}
+                <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-transform duration-300">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="bg-yellow-50 text-[#eab308] p-2 rounded-lg shrink-0">
+                      <i className="ph-fill ph-clock-countdown text-2xl"></i>
+                    </div>
+                    <h4 className="font-bold text-gray-900 leading-tight">275 to 550 Hours <br /> <span className="text-sm font-medium text-gray-500">of Conceptual Mastery</span></h4>
+                  </div>
+                  <p className="text-sm text-gray-600 ml-12">Balanced mix of theory + practice + Olympiad-level problems.</p>
+                </div>
+
+                {/* Highlight Card 2 */}
+                <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-transform duration-300">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="bg-green-50 text-[#2d5a40] p-2 rounded-lg shrink-0">
+                      <i className="ph-fill ph-users-three text-2xl"></i>
+                    </div>
+                    <h4 className="font-bold text-gray-900 leading-tight">Small Batch Size <br /> <span className="text-sm font-medium text-gray-500">Maximum 20 Students</span></h4>
+                  </div>
+                  <p className="text-sm text-gray-600 ml-12">Individual attention and small class strength.</p>
+                </div>
+
+                {/* Highlight Card 3 */}
+                <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-transform duration-300">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="bg-blue-50 text-blue-600 p-2 rounded-lg shrink-0">
+                      <i className="ph-fill ph-file-text text-2xl"></i>
+                    </div>
+                    <h4 className="font-bold text-gray-900 leading-tight">Regular Tests, <br /> <span className="text-sm font-medium text-gray-500">Feedback & Updates</span></h4>
+                  </div>
+                  <p className="text-sm text-gray-600 ml-12">Track progress, identify weaknesses, align strategy.</p>
+                </div>
+
+                {/* Highlight Card 4 */}
+                <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-transform duration-300">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="bg-orange-50 text-[#ea580c] p-2 rounded-lg shrink-0">
+                      <i className="ph-fill ph-trophy text-2xl"></i>
+                    </div>
+                    <h4 className="font-bold text-gray-900 leading-tight">Olympiad Excellence <br /> <span className="text-sm font-medium text-gray-500">Top Scorers in NSEJS...</span></h4>
+                  </div>
+                  <p className="text-sm text-gray-600 ml-12">Proven track record in producing Olympiad toppers.</p>
+                </div>
+
+              </div>
+            </section>
+
+          </div>
+
+          {/* RIGHT COLUMN (Forms & Images) */}
+          <div className="lg:col-span-5 flex flex-col gap-8">
+
+            {/* Form Card */}
+            <div className="bg-white rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] p-4 sm:p-8 border border-gray-100 relative overflow-hidden lg:-mt-24 z-40">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ea580c] to-[#eab308]"></div>
+
+              <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Schedule Your Free <br /> Counselling Session</h4>
+              <p className="text-gray-500 text-sm mb-6">Discuss your child's academic goals and get a personalized roadmap.</p>
+
+              <form className="space-y-4">
+                {/* Input 1 */}
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                    <i className="ph ph-user text-gray-400 text-lg"></i>
+                  </div>
+                  <input type="text" className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#ea580c] focus:border-[#ea580c] block w-full pl-10 p-3.5 transition-colors" placeholder="Parent/Student Name" required />
+                </div>
+
+                {/* Input 2 (Select styled as input) */}
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                    <i className="ph ph-lock-key text-gray-400 text-lg"></i>
+                  </div>
+                  <select defaultValue="" className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#ea580c] focus:border-[#ea580c] block w-full pl-10 p-3.5 appearance-none transition-colors" required>
+                    <option value="" disabled className="text-gray-400">Current Class</option>
+                    <option value="8">Class 8</option>
+                    <option value="9">Class 9</option>
+                    <option value="10">Class 10</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none">
+                    <i className="ph ph-caret-down text-gray-400"></i>
+                  </div>
+                </div>
+
+                {/* Input 3 */}
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                    <i className="ph ph-phone text-gray-400 text-lg"></i>
+                  </div>
+                  <input type="tel" className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#ea580c] focus:border-[#ea580c] block w-full pl-10 p-3.5 transition-colors" placeholder="Mobile Number" required />
+                </div>
+
+                {/* Submit Button */}
+                <button type="submit" className="w-full text-white bg-[#ea580c] hover:bg-orange-700 focus:ring-4 focus:ring-orange-300 font-semibold rounded-lg text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-orange-500/30 mt-4">
+                  <i className="ph ph-paper-plane-right text-xl"></i>
+                  Book My Counselling Slot
+                </button>
+              </form>
+
+              {/* Contact Methods */}
+              <div className="mt-8 flex flex-col gap-4 justify-center items-center pt-6 border-t border-gray-100">
+                <a href="tel:+917758884678" className="flex items-center gap-3 text-gray-700 hover:text-[#ea580c] font-medium transition-colors">
+                  <div className="bg-green-100 text-[#2d5a40] p-1.5 rounded-full">
+                    <i className="ph-fill ph-phone text-lg"></i>
+                  </div>
+                  +91-7758884678
+                </a>
+                <a href="#" className="flex items-center gap-3 text-gray-700 hover:text-[#2d5a40] font-medium transition-colors">
+                  <div className="bg-green-100 text-[#2d5a40] p-1.5 rounded-full">
+                    <i className="ph-fill ph-whatsapp-logo text-lg"></i>
+                  </div>
+                  Message us on WhatsApp
+                </a>
               </div>
 
-              {/* IGNITE Advantage */}
-              <div className="bg-gradient-to-br from-red-50/80 to-orange-50/50 rounded-xl p-4 sm:p-5 border border-red-100/50">
-                <h3 className="text-xs sm:text-base font-extrabold text-slate-800 mb-0.5">The IGNITE Advantage</h3>
-                <p className="text-slate-400 italic text-[9px] sm:text-xs mb-3">Strong fundamentals. Right habits. Early edge.</p>
-                <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
-                  {[
-                    { icon: Brain, title: 'Concept Depth', desc: 'Clarity over rote' },
-                    { icon: ArrowRight, title: 'Learning Style', desc: 'Concept → Application' },
-                    { icon: Calendar, title: 'Weekly Plan', desc: '3d (8th) · 4d (9th)' },
-                    { icon: Clock, title: '3 hrs/day', desc: 'Balanced intensity' },
-                    { icon: BookMarked, title: 'Classroom', desc: 'Teach + practice' },
-                    { icon: Sparkles, title: 'Philosophy', desc: 'Curiosity first' },
-                  ].map((item, i) => (
-                    <div key={i} className="bg-white rounded-lg p-2 sm:p-3 border border-red-100/30">
-                      <item.icon size={11} className="text-red-400 mb-0.5" />
-                      <p className="text-slate-700 font-bold text-[9px] sm:text-xs leading-tight">{item.title}</p>
-                      <p className="text-slate-400 text-[8px] sm:text-[10px] leading-tight">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              {/* Download Brochure */}
+              <a
+                href="/IGNITE Foundation Program.pdf"
+                download="IGNITE-Foundation-Program"
+                className="w-full text-white bg-gradient-to-b from-[#18489a] to-[#0f3d8a] hover:from-[#133e85] hover:to-[#0a3175] focus:ring-4 focus:ring-blue-300 font-medium rounded-xl text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-md border-[3px] border-[#93c5fd]/50 mt-4"
+              >
+                <BookOpen size={20} />
+                Download Brochure
+              </a>
             </div>
 
-            {/* RIGHT COLUMN — Sidebar */}
-            <div className="space-y-4">
-
-              {/* Interest Form */}
-              <div className="relative bg-white rounded-xl p-4 sm:p-5 shadow-lg border border-orange-100 overflow-hidden">
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-orange-100 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-red-50 rounded-full blur-lg"></div>
-                <div className="relative z-10">
-                  <h3 className="text-sm sm:text-base font-extrabold text-slate-800 mb-0.5">Get Started</h3>
-                  <p className="text-slate-400 text-[10px] mb-3">Course details & eligibility info</p>
-                  {submitted ? (
-                    <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2.5 text-green-700 text-center text-xs font-bold">
-                      <CheckCircle size={14} className="inline mr-1" />We'll contact you soon!
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-2">
-                      <div className="relative">
-                        <User size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-orange-400" />
-                        <input type="text" placeholder="Parent / Student Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-                          className="pl-7 pr-2 py-2.5 rounded-lg text-xs text-slate-800 bg-slate-50 border border-slate-200 w-full outline-none placeholder-slate-400 focus:border-orange-400 focus:bg-white transition-all" />
-                      </div>
-                      <div className="relative">
-                        <Phone size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-orange-400" />
-                        <input type="tel" placeholder="Mobile Number" required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                          className="pl-7 pr-2 py-2.5 rounded-lg text-xs text-slate-800 bg-slate-50 border border-slate-200 w-full outline-none placeholder-slate-400 focus:border-orange-400 focus:bg-white transition-all" />
-                      </div>
-                      <select value={form.currentClass} onChange={(e) => setForm({ ...form, currentClass: e.target.value })} required
-                        className="px-2 py-2.5 rounded-lg text-xs text-slate-600 bg-slate-50 border border-slate-200 w-full outline-none focus:border-orange-400 transition-all">
-                        <option value="">Current Class</option>
-                        <option value="7th">7th Std</option>
-                        <option value="8th">8th Std</option>
-                      </select>
-                      <button type="submit" className="w-full px-4 py-2.5 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold text-xs rounded-lg hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-1.5 justify-center">
-                        <Send size={12} /> Request Details
-                      </button>
-                    </form>
-                  )}
-                </div>
-              </div>
-
-              {/* CTA Card */}
-              <div className="bg-gradient-to-br from-[#0A1E3F] to-[#0060A0] rounded-xl p-4 sm:p-5 text-white">
-                <h4 className="font-bold text-sm mb-1">Not sure which exam is right?</h4>
-                <p className="text-white/50 text-[10px] mb-3">Our Knowledge Corner has everything mapped out.</p>
-                <Link to="/knowledge-corner" className="inline-flex items-center gap-1 px-4 py-2 bg-white text-[#0090D4] font-bold text-xs rounded-full hover:shadow-lg transition-all">
-                  Explore <ArrowRight size={12} />
-                </Link>
-              </div>
-
-              {/* Quick Contact */}
-              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-                <h4 className="font-bold text-slate-700 text-xs mb-2">Quick Contact</h4>
-                <a href="tel:+917758884678" className="flex items-center gap-2 text-[#0090D4] text-xs font-semibold hover:underline mb-1">
-                  <Phone size={12} /> +91 7758884678
-                </a>
-                <a href="tel:+918999519632" className="flex items-center gap-2 text-[#0090D4] text-xs font-semibold hover:underline">
-                  <Phone size={12} /> +91 8999519632
-                </a>
-              </div>
+            {/* Secondary Image Container */}
+            <div className="rounded-2xl overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] border border-gray-100">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop"
+                alt="Students studying joyfully"
+                className="w-full h-64 object-cover" />
             </div>
+
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* BOTTOM FOOTER CTA */}
+      <div className="mt-20 w-full bg-[#1b3b2b] py-10 px-4 sm:px-6 lg:px-8 border-t-4 border-[#eab308]">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-light text-white mb-2">
+              Need the <span className="font-bold text-[#eab308]">Catalyst Edge</span> for Your Child?
+            </h3>
+            <p className="text-gray-300 text-sm md:text-base">
+              Give your child the <span className="font-bold text-white">best foundation</span> for future competitive exams.
+            </p>
+          </div>
+
+          <button type="button" className="text-white bg-[#ea580c] hover:bg-orange-600 focus:ring-4 focus:ring-orange-300 font-bold rounded-full text-base md:text-lg px-8 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-xl shadow-orange-900/50 flex-shrink-0">
+            <div className="w-2 h-2 rounded-full bg-white animate-ping mr-1"></div>
+            Get Started for April 2026 Batch
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

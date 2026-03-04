@@ -4,20 +4,21 @@ import {
   Navbar,
   Hero,
   Programs,
-  Features,
   Reviews,
-  Results as ResultsSection,
+  ResultsSection,
   Footer,
   KnowledgeCornerPreview,
+  WhyChooseUs,
 } from './components';
 import { Courses, Results, Contact, KnowledgeCorner, KCLevel, KCPathway, KCClass, IgniteProgram, Super13Program } from './pages';
 
 const HomePage = () => (
   <>
     <Hero />
-    <Reviews />
+    <ResultsSection />
+    {/* <Reviews /> */}
     <Programs />
-    <Features />
+    <WhyChooseUs />
   </>
 );
 

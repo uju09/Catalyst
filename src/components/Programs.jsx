@@ -35,7 +35,7 @@ const courses = [
 const CourseCard = ({ course }) => (
   <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 overflow-hidden group">
     {/* Image */}
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden flex justify-center bg-[#f2f6f0]">
       <img
         src={course.image}
         alt={course.title}
