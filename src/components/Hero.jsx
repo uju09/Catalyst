@@ -38,7 +38,7 @@ export const Hero = () => {
 
   return (
     <section id="home" className="w-full bg-white flex justify-center pb-3 sm:pb-10 pt-2 sm:pt-4">
-      <div className="relative w-full max-w-[1400px] h-[200px] sm:h-[380px] md:h-[450px] lg:h-[550px] flex items-center justify-center text-center overflow-hidden bg-white">
+      <div className="relative w-full max-w-[1400px] h-[280px] sm:h-[380px] md:h-[450px] lg:h-[550px] flex items-center justify-center text-center overflow-hidden bg-white">
         {/* Background Image Slider */}
         {heroImages.map((image, index) => (
           <div
