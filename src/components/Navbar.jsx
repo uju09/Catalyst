@@ -146,12 +146,6 @@ export const Navbar = () => {
                 </Link>
               )
             ))}
-            <a
-              href="/#contact"
-              className="px-6 py-2.5 bg-[#0090D4] text-white text-sm font-bold rounded-full hover:bg-sky-500 transition-all shadow-lg shadow-blue-200"
-            >
-              Book a Free Demo
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -217,18 +211,6 @@ export const Navbar = () => {
               </Link>
             )
           ))}
-          <div
-            className={`pt-2 transition-all duration-300 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-            style={{ transitionDelay: isOpen ? `${navLinks.length * 60}ms` : '0ms' }}
-          >
-            <a
-              href="/#contact"
-              className="block w-full text-center px-4 py-3 bg-[#0090D4] text-white font-bold rounded-full hover:bg-sky-500 transition-colors shadow-lg shadow-blue-200/50"
-              onClick={() => setIsOpen(false)}
-            >
-              Book a Free Demo
-            </a>
-          </div>
         </div>
       </div>
     </nav>

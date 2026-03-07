@@ -246,10 +246,10 @@ export const Results = () => {
               Take the first step towards your dream career. Join Catalyst and become the next success story.
             </p>
             <a
-              href="/#contact"
+              href="/contact"
               className="inline-flex items-center gap-2 px-10 py-4 bg-white text-[#0090D4] font-bold rounded-full hover:bg-gray-50 transition-all shadow-xl transform hover:-translate-y-1"
             >
-              Book Free Counselling
+              Request a Callback
             </a>
           </div>
         </div>
