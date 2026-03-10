@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const heroImages = [
   {
     url: '/hero/img.png',
-    alt: 'Saraswati Puja Celebration',
+    alt: 'Hero Image',
     link: '/'
   },
   {

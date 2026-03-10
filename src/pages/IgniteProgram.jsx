@@ -243,7 +243,7 @@ export const IgniteProgram = () => {
 
               {/* Download Brochure */}
               <a
-                href="/IGNITE Foundation Program.pdf"
+                href="/brochure/IGNITE Foundation Program.pdf"
                 download="IGNITE-Foundation-Program"
                 className="w-full text-white bg-gradient-to-b from-[#18489a] to-[#0f3d8a] hover:from-[#133e85] hover:to-[#0a3175] focus:ring-4 focus:ring-blue-300 font-medium rounded-xl text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-md border-[3px] border-[#93c5fd]/50 mt-4"
               >
