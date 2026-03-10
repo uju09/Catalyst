@@ -223,7 +223,7 @@ export const Super13Program = () => {
               </div>
 
               <a
-                href="/SUPER13.pdf"
+                href="/brochure/SUPER13.pdf"
                 download="SUPER-13-Brochure"
                 className="w-full text-white bg-gradient-to-b from-[#18489a] to-[#0f3d8a] hover:from-[#133e85] hover:to-[#0a3175] focus:ring-4 focus:ring-blue-300 font-medium rounded-xl text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-md border-[3px] border-[#93c5fd]/50"
               >
