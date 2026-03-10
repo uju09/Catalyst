@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import ReviewsSection from '../components/ReviewsSection';
 
 const resultsData = [
   { name: 'Akash Nair', college: 'IIT Madras', image: '/result/akash.jpeg' },
@@ -396,6 +397,8 @@ export const Results = () => {
           </div>
         </div>
       </section>
+
+      <ReviewsSection />
 
       {/* CTA Section */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50 relative z-20">
