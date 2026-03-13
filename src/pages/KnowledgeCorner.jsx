@@ -255,7 +255,7 @@ export const KnowledgeCorner = () => {
                 className="animate-pulseGlow inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold text-sm rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <Sparkles size={14} />
-                Get a Guided Roadmap
+                Request a call back
               </Link>
             </div>
           </div>

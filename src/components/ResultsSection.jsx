@@ -47,7 +47,7 @@ export const ResultsSection = () => {
         {/* Section Header */}
         <div className="mb-8 sm:mb-12 text-center">
           <p className="text-[#0090D4] font-semibold text-xs sm:text-sm tracking-widest uppercase mb-2">Success Stories</p>
-          <h2 className="text-gray-900 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">Our Top Performers</h2>
+          <h2 className="text-gray-900 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">Our Top Results</h2>
           <div className="w-12 h-1 bg-[#0090D4] rounded-full mx-auto mt-3"></div>
         </div>
 
