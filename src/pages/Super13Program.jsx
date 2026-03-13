@@ -1,7 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { BookOpen } from 'lucide-react';
 
 export const Super13Program = () => {
+  const formRef = useRef(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [highlightForm, setHighlightForm] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
+  const handleScrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setHighlightForm(true);
+    setTimeout(() => setHighlightForm(false), 2000);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -147,51 +162,59 @@ export const Super13Program = () => {
           <div className="lg:col-span-5 xl:col-span-4 flex flex-col gap-6">
 
             {/* Form Card */}
-            <div className="bg-white rounded-2xl shadow-xl shadow-blue-900/5 p-6 md:p-8 border border-gray-100">
-              <h4 className="text-xl font-bold text-[#0f172a] mb-2">Schedule a Free <br /> Academic Strategy Session</h4>
+            <div ref={formRef} className={`bg-white rounded-2xl shadow-xl shadow-blue-900/5 p-6 md:p-8 border ${highlightForm ? 'border-blue-400 ring-4 ring-blue-100 scale-[1.02]' : 'border-gray-100'} transition-all duration-300`}>
+              <h4 className="text-xl font-bold text-[#0f172a] mb-2">Schedule a Free <br /> Counselling Session</h4>
               <p className="text-gray-500 text-sm mb-6">Discuss your child's academic goals and get a personalized roadmap.</p>
 
-              <form className="space-y-4">
-                {/* Input 1 */}
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                    <i className="ph ph-user text-gray-400 text-lg"></i>
-                  </div>
-                  <input type="text" className="bg-gray-50 border border-gray-200 text-[#0f172a] text-sm rounded-lg focus:ring-[#3b82f6] focus:border-[#3b82f6] block w-full pl-10 p-3 transition-colors" placeholder="Parent/Student Name" required />
+              {isSubmitted ? (
+                <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center mb-6">
+                  <i className="ph-fill ph-check-circle text-green-500 text-4xl mb-2"></i>
+                  <h5 className="text-green-800 font-bold text-lg mb-1">Details Received!</h5>
+                  <p className="text-green-700 text-sm mb-4">You can now download the program brochure below.</p>
                 </div>
-
-                {/* Input 2 (Select styled as input) */}
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                    <i className="ph ph-lock-key text-gray-400 text-lg"></i>
+              ) : (
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  {/* Input 1 */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                      <i className="ph ph-user text-gray-400 text-lg"></i>
+                    </div>
+                    <input type="text" className="bg-gray-50 border border-gray-200 text-[#0f172a] text-sm rounded-lg focus:ring-[#3b82f6] focus:border-[#3b82f6] block w-full pl-10 p-3 transition-colors" placeholder="Parent/Student Name" required />
                   </div>
-                  <select defaultValue="" className="bg-gray-50 border border-gray-200 text-[#0f172a] text-sm rounded-lg focus:ring-[#3b82f6] focus:border-[#3b82f6] block w-full pl-10 p-3 appearance-none transition-colors" required>
-                    <option value="" disabled className="text-gray-400">Current Class</option>
-                    <option value="9">Class 9</option>
-                    <option value="10">Class 10</option>
-                  </select>
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                    <i className="ph ph-caret-down text-gray-400"></i>
-                  </div>
-                </div>
 
-                {/* Input 3 */}
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                    <i className="ph ph-phone text-gray-400 text-lg"></i>
+                  {/* Input 2 (Select styled as input) */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                      <i className="ph ph-lock-key text-gray-400 text-lg"></i>
+                    </div>
+                    <select defaultValue="" className="bg-gray-50 border border-gray-200 text-[#0f172a] text-sm rounded-lg focus:ring-[#3b82f6] focus:border-[#3b82f6] block w-full pl-10 p-3 appearance-none transition-colors" required>
+                      <option value="" disabled className="text-gray-400">Current Class</option>
+                      <option value="9">Class 9</option>
+                      <option value="10">Class 10</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <i className="ph ph-caret-down text-gray-400"></i>
+                    </div>
                   </div>
-                  <input type="tel" className="bg-gray-50 border border-gray-200 text-[#0f172a] text-sm rounded-lg focus:ring-[#3b82f6] focus:border-[#3b82f6] block w-full pl-10 p-3 transition-colors" placeholder="Mobile Number" required />
-                </div>
 
-                {/* Submit Button */}
-                <button type="submit" className="w-full text-white bg-[#3b82f6] hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3.5 flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-blue-500/30 mt-2">
-                  <i className="ph ph-paper-plane-right text-xl"></i>
-                  Book My Counselling Slot
-                </button>
-              </form>
+                  {/* Input 3 */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                      <i className="ph ph-phone text-gray-400 text-lg"></i>
+                    </div>
+                    <input type="tel" className="bg-gray-50 border border-gray-200 text-[#0f172a] text-sm rounded-lg focus:ring-[#3b82f6] focus:border-[#3b82f6] block w-full pl-10 p-3 transition-colors" placeholder="Mobile Number" required />
+                  </div>
+
+                  {/* Submit Button */}
+                  <button type="submit" className="w-full text-white bg-[#3b82f6] hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3.5 flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-blue-500/30 mt-2">
+                    <i className="ph ph-paper-plane-right text-xl"></i>
+                    Book My Counselling Slot
+                  </button>
+                </form>
+              )}
 
               {/* Contact Methods */}
-              <div className="mt-6 flex flex-col gap-3 justify-center items-center pt-5 border-t border-gray-100">
+              <div className="mt-6 flex flex-col gap-3 justify-center items-center pt-5 border-t border-gray-100 mb-6">
                 <a href="tel:+917758884678" className="flex items-center gap-2 text-[#0f172a] hover:text-[#3b82f6] font-medium transition-colors">
                   <i className="ph-fill ph-phone-call text-green-600 text-xl"></i>
                   +91-7758884678
@@ -200,6 +223,33 @@ export const Super13Program = () => {
                   <i className="ph-fill ph-whatsapp-logo text-green-600 text-xl"></i>
                   Message us on WhatsApp
                 </a>
+              </div>
+
+              {/* Download Brochure (Always Visible, Conditionally Disabled) */}
+              <div className="relative group w-full">
+                <a
+                  href={isSubmitted ? "/brochure/SUPER13.pdf" : "#"}
+                  download={isSubmitted ? "SUPER-13-Brochure" : undefined}
+                  onClick={(e) => {
+                    if (!isSubmitted) e.preventDefault();
+                  }}
+                  className={`w-full font-semibold rounded-xl text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-300 border-[2px]
+                    ${isSubmitted
+                      ? 'text-white bg-gradient-to-b from-[#18489a] to-[#0f3d8a] hover:from-[#133e85] hover:to-[#0a3175] focus:ring-4 focus:ring-blue-300 shadow-md border-[#93c5fd]/50'
+                      : 'text-[#1e40af]/60 bg-[#1e40af]/5 border-[#1e40af]/10 cursor-not-allowed hover:bg-[#1e40af]/10'
+                    }`}
+                >
+                  <BookOpen size={20} />
+                  Download Brochure
+                </a>
+
+                {/* Tooltip on hover if not submitted */}
+                {!isSubmitted && (
+                  <div className="absolute left-1/2 -translate-x-1/2 -top-12 bg-gray-800 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-xl z-50">
+                    Please fill out the form to download
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-gray-800"></div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -222,14 +272,6 @@ export const Super13Program = () => {
                 </div>
               </div>
 
-              <a
-                href="/brochure/SUPER13.pdf"
-                download="SUPER-13-Brochure"
-                className="w-full text-white bg-gradient-to-b from-[#18489a] to-[#0f3d8a] hover:from-[#133e85] hover:to-[#0a3175] focus:ring-4 focus:ring-blue-300 font-medium rounded-xl text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-md border-[3px] border-[#93c5fd]/50"
-              >
-                <BookOpen size={20} />
-                Download Brochure
-              </a>
             </div>
 
           </div>
@@ -249,7 +291,11 @@ export const Super13Program = () => {
             </p>
           </div>
 
-          <button type="button" className="text-[#1e40af] bg-white hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-base px-8 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-xl flex-shrink-0">
+          <button
+            type="button"
+            onClick={handleScrollToForm}
+            className="text-[#1e40af] bg-white hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-base px-8 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-xl flex-shrink-0"
+          >
             <i className="ph ph-paper-plane-right text-xl"></i>
             Secure Your Seat for 2026 Batch
           </button>

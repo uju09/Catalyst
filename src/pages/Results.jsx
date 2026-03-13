@@ -289,7 +289,7 @@ export const Results = () => {
               <div className="absolute -top-4 -left-8 text-yellow-400 opacity-50 text-2xl">✦</div>
               <div className="absolute -bottom-2 -right-8 text-yellow-400 opacity-50 text-2xl">✦</div>
               <h3 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 to-yellow-500 italic uppercase">
-                JEE MAINS
+                JEE MAINS 2026
               </h3>
             </div>
 
@@ -311,7 +311,7 @@ export const Results = () => {
                     <div className="text-yellow-500 text-xs sm:text-2xl absolute -top-1.5 sm:-top-4 left-1/2 -translate-x-1/2">★</div>
                   </div>
                   <div className="w-16 h-16 sm:w-48 sm:h-48 mx-auto mt-2 sm:mt-4 mb-2 sm:mb-4 rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border-2 sm:border-4 border-yellow-50">
-                    <svg className="w-full h-full text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+                    <img src="/main26/adrik.jpeg" alt="Adrik Biswas" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-[11px] sm:text-2xl font-bold text-blue-900 mb-0.5 sm:mb-1 leading-tight line-clamp-1">Adrik Biswas</h3>
                   <div className="text-xl sm:text-5xl font-black text-yellow-600 flex items-center justify-center gap-0.5 sm:gap-1">
@@ -328,7 +328,7 @@ export const Results = () => {
                     <div className="text-yellow-400 text-xs sm:text-2xl absolute -top-1.5 sm:-top-4 left-1/2 -translate-x-1/2">★</div>
                   </div>
                   <div className="w-16 h-16 sm:w-48 sm:h-48 mx-auto mt-2 sm:mt-4 mb-2 sm:mb-4 rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border-2 sm:border-4 border-blue-50">
-                    <svg className="w-full h-full text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+                    <img src="/main26/aryan.jpeg" alt="Pawar Aryan Gajanan" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-[11px] sm:text-2xl font-bold text-blue-900 mb-0.5 sm:mb-1 leading-tight line-clamp-1">Pawar Aryan Gajanan</h3>
                   <div className="text-xl sm:text-5xl font-black text-blue-800 flex items-center justify-center gap-0.5 sm:gap-1">
@@ -343,7 +343,7 @@ export const Results = () => {
               {/* Performers */}
               <div className="bg-white/95 rounded-lg sm:rounded-2xl p-2 sm:p-6 text-center shadow-lg border border-white/20">
                 <div className="w-10 h-10 sm:w-24 sm:h-24 mx-auto mb-2 sm:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-slate-100">
-                  <svg className="w-full h-full text-slate-300 p-1.5 sm:p-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+                  <img src="/main26/sushant.jpeg" alt="Sushant Sanjay Awalekar" className="w-full h-full object-cover" />
                 </div>
                 <h4 className="font-bold text-blue-900 text-[9px] sm:text-lg leading-[1.1] sm:leading-tight mb-1 sm:mb-2 line-clamp-2 min-h-[20px] sm:min-h-0">Sushant Sanjay Awalekar</h4>
                 <p className="text-sm sm:text-3xl font-black text-blue-700">98.86</p>
@@ -351,6 +351,7 @@ export const Results = () => {
 
               <div className="bg-white/95 rounded-lg sm:rounded-2xl p-2 sm:p-6 text-center shadow-lg border border-white/20">
                 <div className="w-10 h-10 sm:w-24 sm:h-24 mx-auto mb-2 sm:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-slate-100">
+                  {/* Missing image for Kad Yash Santosh, leaving placeholder for now or maybe we need to adjust names if wrong name was given compared to images available */}
                   <svg className="w-full h-full text-slate-300 p-1.5 sm:p-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
                 </div>
                 <h4 className="font-bold text-blue-900 text-[9px] sm:text-lg leading-[1.1] sm:leading-tight mb-1 sm:mb-2 line-clamp-2 min-h-[20px] sm:min-h-0">Kad Yash Santosh</h4>
@@ -359,7 +360,7 @@ export const Results = () => {
 
               <div className="bg-white/95 rounded-lg sm:rounded-2xl p-2 sm:p-6 text-center shadow-lg border border-white/20">
                 <div className="w-10 h-10 sm:w-24 sm:h-24 mx-auto mb-2 sm:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-slate-100">
-                  <svg className="w-full h-full text-slate-300 p-1.5 sm:p-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+                  <img src="/main26/sanskruti.jpeg" alt="Sanskruti Abhay Katkamwar" className="w-full h-full object-cover" />
                 </div>
                 <h4 className="font-bold text-blue-900 text-[9px] sm:text-lg leading-[1.1] sm:leading-tight mb-1 sm:mb-2 line-clamp-2 min-h-[20px] sm:min-h-0">Sanskruti Abhay Katkamwar</h4>
                 <p className="text-sm sm:text-3xl font-black text-blue-700">97.69</p>
@@ -380,7 +381,7 @@ export const Results = () => {
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center">
           <div className="mb-8 sm:mb-12 text-center">
             <p className="text-[#0090D4] font-semibold text-xs sm:text-sm tracking-widest uppercase mb-2">Success Stories</p>
-            <h2 className="text-gray-900 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">Our Top Performers</h2>
+            <h2 className="text-gray-900 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">Our Top Results</h2>
             <div className="w-12 h-1 bg-[#0090D4] rounded-full mx-auto mt-3"></div>
           </div>
 

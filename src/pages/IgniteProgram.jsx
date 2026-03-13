@@ -1,7 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BookOpen } from 'lucide-react';
 
 export const IgniteProgram = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -73,10 +80,10 @@ export const IgniteProgram = () => {
             {/* Section 1: Olympiad Prep */}
             <section>
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 flex flex-wrap gap-2 items-center">
-                Olympiad Prep <span className="text-[#ea580c]">+</span> Academic Excellence
+                Olympiad Exposure <span className="text-[#ea580c]">+</span> Academic Excellence
               </h3>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                Every student starts with a <span className="font-bold text-gray-900">focus bridge course</span> to ensure subject mastery before diving deep into Olympiad preparation.
+                Students develop strong conceptual understanding and problem-solving skills while getting early exposure to Olympiad-style thinking.
               </p>
 
               <div className="space-y-6">
@@ -85,31 +92,31 @@ export const IgniteProgram = () => {
                   <i className="ph-fill ph-check-circle text-[#2d5a40] text-3xl mt-0.5 group-hover:scale-110 transition-transform"></i>
                   <div>
                     <h4 className="text-xl font-bold text-gray-900 mb-1">Conceptual Clarity</h4>
-                    <p className="text-gray-600">Not rote learning, but mastering Physics, Chemistry, Maths, & Mental Ability.</p>
+                    <p className="text-gray-600">Not rote learning, but mastering Physics, Chemistry, Maths & Mental Ability through deep understanding.</p>
                   </div>
                 </div>
                 {/* List Item 2 */}
                 <div className="flex items-start gap-4 group">
                   <i className="ph-fill ph-check-circle text-[#2d5a40] text-3xl mt-0.5 group-hover:scale-110 transition-transform"></i>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-1">Intensive Schedule</h4>
-                    <p className="text-gray-600">3–5 study days a week, focusing on depth and application — not shortcuts.</p>
+                    <h4 className="text-xl font-bold text-gray-900 mb-1">Olympiad Thinking</h4>
+                    <p className="text-gray-600">Carefully curated problems that introduce students to Olympiad-style logical and analytical thinking.</p>
                   </div>
                 </div>
                 {/* List Item 3 */}
                 <div className="flex items-start gap-4 group">
                   <i className="ph-fill ph-check-circle text-[#2d5a40] text-3xl mt-0.5 group-hover:scale-110 transition-transform"></i>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-1">Strong Foundation</h4>
-                    <p className="text-gray-600">Build the core concepts necessary for future IIT / NEET preparation.</p>
+                    <h4 className="text-xl font-bold text-gray-900 mb-1">Structured Learning Schedule</h4>
+                    <p className="text-gray-600">3–5 study days a week focusing on concepts, application, and disciplined study habits.</p>
                   </div>
                 </div>
                 {/* List Item 4 */}
                 <div className="flex items-start gap-4 group">
                   <i className="ph-fill ph-check-circle text-[#2d5a40] text-3xl mt-0.5 group-hover:scale-110 transition-transform"></i>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-1">Outperform the Competition</h4>
-                    <p className="text-gray-600">Gain a competitive edge in NSEJS & top Olympiads.</p>
+                    <h4 className="text-xl font-bold text-gray-900 mb-1">Strong Academic Foundation</h4>
+                    <p className="text-gray-600">Build the core concepts required for school excellence today and JEE/NEET preparation later.</p>
                   </div>
                 </div>
               </div>
@@ -132,7 +139,7 @@ export const IgniteProgram = () => {
                     <div className="bg-yellow-50 text-[#eab308] p-2 rounded-lg shrink-0">
                       <i className="ph-fill ph-clock-countdown text-2xl"></i>
                     </div>
-                    <h4 className="font-bold text-gray-900 leading-tight">275 to 550 Hours <br /> <span className="text-sm font-medium text-gray-500">of Conceptual Mastery</span></h4>
+                    <h4 className="font-bold text-gray-900 leading-tight">300 + Hours <br /> <span className="text-sm font-medium text-gray-500">of Conceptual Mastery</span></h4>
                   </div>
                   <p className="text-sm text-gray-600 ml-12">Balanced mix of theory + practice + Olympiad-level problems.</p>
                 </div>
@@ -143,7 +150,7 @@ export const IgniteProgram = () => {
                     <div className="bg-green-50 text-[#2d5a40] p-2 rounded-lg shrink-0">
                       <i className="ph-fill ph-users-three text-2xl"></i>
                     </div>
-                    <h4 className="font-bold text-gray-900 leading-tight">Small Batch Size <br /> <span className="text-sm font-medium text-gray-500">Maximum 20 Students</span></h4>
+                    <h4 className="font-bold text-gray-900 leading-tight">Small Batch Size <br /> <span className="text-sm font-medium text-gray-500">For focused learning</span></h4>
                   </div>
                   <p className="text-sm text-gray-600 ml-12">Individual attention and small class strength.</p>
                 </div>
@@ -167,7 +174,7 @@ export const IgniteProgram = () => {
                     </div>
                     <h4 className="font-bold text-gray-900 leading-tight">Olympiad Excellence <br /> <span className="text-sm font-medium text-gray-500">Top Scorers in NSEJS...</span></h4>
                   </div>
-                  <p className="text-sm text-gray-600 ml-12">Proven track record in producing Olympiad toppers.</p>
+                  <p className="text-sm text-gray-600 ml-12">Exposure to Olympiad-style logical and analytical problems.</p>
                 </div>
 
               </div>
@@ -185,48 +192,56 @@ export const IgniteProgram = () => {
               <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Schedule Your Free <br /> Counselling Session</h4>
               <p className="text-gray-500 text-sm mb-6">Discuss your child's academic goals and get a personalized roadmap.</p>
 
-              <form className="space-y-4">
-                {/* Input 1 */}
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                    <i className="ph ph-user text-gray-400 text-lg"></i>
-                  </div>
-                  <input type="text" className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#ea580c] focus:border-[#ea580c] block w-full pl-10 p-3.5 transition-colors" placeholder="Parent/Student Name" required />
+              {isSubmitted ? (
+                <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center mb-6">
+                  <i className="ph-fill ph-check-circle text-green-500 text-4xl mb-2"></i>
+                  <h5 className="text-green-800 font-bold text-lg mb-1">Details Received!</h5>
+                  <p className="text-green-700 text-sm mb-4">You can now download the program brochure below.</p>
                 </div>
-
-                {/* Input 2 (Select styled as input) */}
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                    <i className="ph ph-lock-key text-gray-400 text-lg"></i>
+              ) : (
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  {/* Input 1 */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                      <i className="ph ph-user text-gray-400 text-lg"></i>
+                    </div>
+                    <input type="text" className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#ea580c] focus:border-[#ea580c] block w-full pl-10 p-3.5 transition-colors" placeholder="Parent/Student Name" required />
                   </div>
-                  <select defaultValue="" className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#ea580c] focus:border-[#ea580c] block w-full pl-10 p-3.5 appearance-none transition-colors" required>
-                    <option value="" disabled className="text-gray-400">Current Class</option>
-                    <option value="8">Class 8</option>
-                    <option value="9">Class 9</option>
-                    <option value="10">Class 10</option>
-                  </select>
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none">
-                    <i className="ph ph-caret-down text-gray-400"></i>
-                  </div>
-                </div>
 
-                {/* Input 3 */}
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                    <i className="ph ph-phone text-gray-400 text-lg"></i>
+                  {/* Input 2 (Select styled as input) */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                      <i className="ph ph-lock-key text-gray-400 text-lg"></i>
+                    </div>
+                    <select defaultValue="" className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#ea580c] focus:border-[#ea580c] block w-full pl-10 p-3.5 appearance-none transition-colors" required>
+                      <option value="" disabled className="text-gray-400">Current Class</option>
+                      <option value="8">Class 8</option>
+                      <option value="9">Class 9</option>
+                      <option value="10">Class 10</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none">
+                      <i className="ph ph-caret-down text-gray-400"></i>
+                    </div>
                   </div>
-                  <input type="tel" className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#ea580c] focus:border-[#ea580c] block w-full pl-10 p-3.5 transition-colors" placeholder="Mobile Number" required />
-                </div>
 
-                {/* Submit Button */}
-                <button type="submit" className="w-full text-white bg-[#ea580c] hover:bg-orange-700 focus:ring-4 focus:ring-orange-300 font-semibold rounded-lg text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-orange-500/30 mt-4">
-                  <i className="ph ph-paper-plane-right text-xl"></i>
-                  Book My Counselling Slot
-                </button>
-              </form>
+                  {/* Input 3 */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                      <i className="ph ph-phone text-gray-400 text-lg"></i>
+                    </div>
+                    <input type="tel" className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#ea580c] focus:border-[#ea580c] block w-full pl-10 p-3.5 transition-colors" placeholder="Mobile Number" required />
+                  </div>
+
+                  {/* Submit Button */}
+                  <button type="submit" className="w-full text-white bg-[#ea580c] hover:bg-orange-700 focus:ring-4 focus:ring-orange-300 font-semibold rounded-lg text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-orange-500/30 mt-4">
+                    <i className="ph ph-paper-plane-right text-xl"></i>
+                    Book My Counselling Slot
+                  </button>
+                </form>
+              )}
 
               {/* Contact Methods */}
-              <div className="mt-8 flex flex-col gap-4 justify-center items-center pt-6 border-t border-gray-100">
+              <div className="mt-8 flex flex-col gap-4 justify-center items-center pt-6 border-t border-gray-100 mb-6">
                 <a href="tel:+917758884678" className="flex items-center gap-3 text-gray-700 hover:text-[#ea580c] font-medium transition-colors">
                   <div className="bg-green-100 text-[#2d5a40] p-1.5 rounded-full">
                     <i className="ph-fill ph-phone text-lg"></i>
@@ -241,15 +256,33 @@ export const IgniteProgram = () => {
                 </a>
               </div>
 
-              {/* Download Brochure */}
-              <a
-                href="/brochure/IGNITE Foundation Program.pdf"
-                download="IGNITE-Foundation-Program"
-                className="w-full text-white bg-gradient-to-b from-[#18489a] to-[#0f3d8a] hover:from-[#133e85] hover:to-[#0a3175] focus:ring-4 focus:ring-blue-300 font-medium rounded-xl text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-200 shadow-md border-[3px] border-[#93c5fd]/50 mt-4"
-              >
-                <BookOpen size={20} />
-                Download Brochure
-              </a>
+              {/* Download Brochure (Always Visible, Conditionally Disabled) */}
+              <div className="relative group w-full">
+                <a
+                  href={isSubmitted ? "/brochure/IGNITE Foundation Program.pdf" : "#"}
+                  download={isSubmitted ? "IGNITE-Foundation-Program" : undefined}
+                  onClick={(e) => {
+                    if (!isSubmitted) e.preventDefault();
+                  }}
+                  className={`w-full font-semibold rounded-xl text-base px-5 py-4 flex items-center justify-center gap-2 transition-all duration-300 border-[2px]
+                    ${isSubmitted
+                      ? 'text-white bg-gradient-to-b from-[#18489a] to-[#0f3d8a] hover:from-[#133e85] hover:to-[#0a3175] focus:ring-4 focus:ring-blue-300 shadow-md border-[#93c5fd]/50'
+                      : 'text-[#18489a]/60 bg-[#18489a]/5 border-[#18489a]/10 cursor-not-allowed hover:bg-[#18489a]/10'
+                    }`}
+                >
+                  <BookOpen size={20} />
+                  Download Brochure
+                </a>
+
+                {/* Tooltip on hover if not submitted */}
+                {!isSubmitted && (
+                  <div className="absolute left-1/2 -translate-x-1/2 -top-12 bg-gray-800 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-xl z-50">
+                    Please fill out the form to download
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-gray-800"></div>
+                  </div>
+                )}
+              </div>
+
             </div>
 
             {/* Secondary Image Container */}
