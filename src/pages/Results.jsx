@@ -351,8 +351,7 @@ export const Results = () => {
 
               <div className="bg-white/95 rounded-lg sm:rounded-2xl p-2 sm:p-6 text-center shadow-lg border border-white/20">
                 <div className="w-10 h-10 sm:w-24 sm:h-24 mx-auto mb-2 sm:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-slate-100">
-                  {/* Missing image for Kad Yash Santosh, leaving placeholder for now or maybe we need to adjust names if wrong name was given compared to images available */}
-                  <svg className="w-full h-full text-slate-300 p-1.5 sm:p-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+                  <img src="/main26/santosh.jpeg" alt="Santosh Kad" className="w-full h-full object-cover" />
                 </div>
                 <h4 className="font-bold text-blue-900 text-[9px] sm:text-lg leading-[1.1] sm:leading-tight mb-1 sm:mb-2 line-clamp-2 min-h-[20px] sm:min-h-0">Kad Yash Santosh</h4>
                 <p className="text-sm sm:text-3xl font-black text-blue-700">98.76</p>
