@@ -256,7 +256,7 @@ export const Contact = () => {
                       <li>Individual performance tracking</li>
                       <li>Strong teacher-student interaction</li>
                     </ul>
-                    <p>Like for Super-13 Integrated Program seats are limited to 13.</p>
+                    <p>Like for Super-30 Integrated Program seats are limited to 30.</p>
                   </div>
                 )
               },

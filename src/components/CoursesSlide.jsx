@@ -94,7 +94,7 @@ export const CoursesSlide = () => {
             </div>
           </div>
 
-          {/* ================= CARD 2: SUPER-13 (BLUE/CYAN) ================= */}
+          {/* ================= CARD 2: SUPER-30 (BLUE/CYAN) ================= */}
           {/* Outer Glossy Gradient Border */}
           <div className="flex-1 rounded-[2.5rem] p-[4px] bg-gradient-to-b from-cyan-300 via-blue-500 to-blue-800 shadow-[0_15px_50px_-10px_rgba(37,99,235,0.6)] transform transition-transform duration-300 hover:scale-[1.02] flex flex-col group relative">
 
@@ -118,7 +118,7 @@ export const CoursesSlide = () => {
 
                 {/* Title */}
                 <div className="relative z-10 text-white flex flex-col justify-center">
-                  <h2 className="text-3xl lg:text-[2.5rem] font-extrabold tracking-tight leading-none drop-shadow-md">SUPER-13</h2>
+                  <h2 className="text-3xl lg:text-[2.5rem] font-extrabold tracking-tight leading-none drop-shadow-md">SUPER-30</h2>
                   <p className="text-blue-100 font-bold text-sm lg:text-[15px] tracking-widest uppercase mt-1 drop-shadow-sm">Integrated Program</p>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export const CoursesSlide = () => {
                   </li>
                   <li className="flex items-center gap-4 border-b border-gray-200 pb-2.5">
                     <svg className="w-7 h-7 lg:w-8 lg:h-8 text-[#5cb85c] flex-shrink-0 check-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
-                    <span className="text-gray-800 font-medium text-[15px] lg:text-[16px] leading-snug"><span className="font-bold text-blue-900">Limited to 13 Students</span> Per Batch</span>
+                    <span className="text-gray-800 font-medium text-[15px] lg:text-[16px] leading-snug"><span className="font-bold text-blue-900">Limited to 30 Students</span> Per Batch</span>
                   </li>
                   <li className="flex items-center gap-4 border-b border-gray-200 pb-2.5">
                     <svg className="w-7 h-7 lg:w-8 lg:h-8 text-[#5cb85c] flex-shrink-0 check-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>

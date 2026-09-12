@@ -9,7 +9,7 @@ const navLinks = [
     href: "/courses",
     dropdown: [
       { name: "IGNITE Foundation Program", href: "/courses/ignite", icon: Flame, color: "text-orange-500" },
-      { name: "SUPER-13 Integrated Program", href: "/courses/super-13", icon: Zap, color: "text-blue-500" },
+      { name: "SUPER-30 Integrated Program", href: "/courses/super-30", icon: Zap, color: "text-blue-500" },
     ]
   },
   { name: "Knowledge Corner", href: "/knowledge-corner" },
