@@ -6,4 +6,4 @@ export { KCLevel } from './KCLevel';
 export { KCPathway } from './KCPathway';
 export { KCClass } from './KCClass';
 export { IgniteProgram } from './IgniteProgram';
-export { Super13Program } from './Super13Program';
+export { Super30Program } from './Super30Program';

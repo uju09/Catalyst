@@ -84,14 +84,14 @@ export const Courses = () => {
             </div>
           </div>
 
-          {/* SUPER-13 Integrated Program — uses Super13Program colors: blue #0f4c9c, #1e62c5, accent #3b82f6 */}
+          {/* SUPER-30 Integrated Program — uses Super30Program colors: blue #0f4c9c, #1e62c5, accent #3b82f6 */}
           <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
             <div className="bg-gradient-to-r from-[#0f4c9c] to-[#1e62c5] p-4 sm:p-6 flex items-center gap-3">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/15 rounded-xl flex items-center justify-center">
                 <Rocket size={22} className="text-white" />
               </div>
               <div>
-                <h2 className="text-lg sm:text-2xl font-extrabold text-white">SUPER-13 Integrated Program</h2>
+                <h2 className="text-lg sm:text-2xl font-extrabold text-white">SUPER-30 Integrated Program</h2>
                 <p className="text-white/60 text-xs sm:text-sm">For students in 10th Std · 2-Year Program</p>
               </div>
             </div>
@@ -137,7 +137,7 @@ export const Courses = () => {
                 ))}
               </div>
 
-              <Link to="/courses/super-13" className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 bg-[#3b82f6] hover:bg-blue-600 text-white font-bold text-xs sm:text-sm rounded-full hover:shadow-lg hover:shadow-blue-200 transition-all">
+              <Link to="/courses/super-30" className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 bg-[#3b82f6] hover:bg-blue-600 text-white font-bold text-xs sm:text-sm rounded-full hover:shadow-lg hover:shadow-blue-200 transition-all">
                 View Full Program <ArrowRight size={14} />
               </Link>
             </div>

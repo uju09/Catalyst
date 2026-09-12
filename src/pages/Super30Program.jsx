@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { BookOpen } from 'lucide-react';
 
-export const Super13Program = () => {
+export const Super30Program = () => {
   const formRef = useRef(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [highlightForm, setHighlightForm] = useState(false);
@@ -39,7 +39,7 @@ export const Super13Program = () => {
         <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-start">
           <div className="max-w-3xl">
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 sm:mb-4 tracking-tight">
-              SUPER-13 Integrated <br className="hidden md:block" />
+              SUPER-30 Integrated <br className="hidden md:block" />
               Mentorship Program
             </h1>
             <h2 className="text-base sm:text-xl md:text-2xl font-semibold text-white mb-4 sm:mb-6">
@@ -79,7 +79,7 @@ export const Super13Program = () => {
         <div className="bg-[#fef3c7]/80 border border-yellow-200 rounded-xl md:rounded-full py-2 sm:py-3 px-4 sm:px-6 flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 mx-auto max-w-4xl shadow-sm">
           <i className="ph-fill ph-lightning text-yellow-500 text-lg sm:text-xl animate-pulse"></i>
           <p className="text-yellow-800 font-medium text-xs sm:text-sm md:text-base text-center">
-            <span className="font-bold">Limited to Only 13 Focused Students Per Batch</span> for Personal Mentorship.
+            <span className="font-bold">Limited to Only 30 Focused Students Per Batch</span> for Personal Mentorship.
           </p>
         </div>
 
@@ -228,8 +228,8 @@ export const Super13Program = () => {
               {/* Download Brochure (Always Visible, Conditionally Disabled) */}
               <div className="relative group w-full">
                 <a
-                  href={isSubmitted ? "/brochure/SUPER13.pdf" : "#"}
-                  download={isSubmitted ? "SUPER-13-Brochure" : undefined}
+                  href={isSubmitted ? "/brochure/SUPER30.pdf" : "#"}
+                  download={isSubmitted ? "SUPER-30-Brochure" : undefined}
                   onClick={(e) => {
                     if (!isSubmitted) e.preventDefault();
                   }}
@@ -287,7 +287,7 @@ export const Super13Program = () => {
             </h3>
             <p className="text-blue-100 text-sm md:text-base">
               Serious preparation requires <span className="font-bold text-white">serious commitment.</span><br />
-              <span className="font-bold text-white">Seats</span> are limited to 13 students only.
+              <span className="font-bold text-white">Seats</span> are limited to 30 students only.
             </p>
           </div>
 

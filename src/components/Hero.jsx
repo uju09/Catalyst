@@ -9,6 +9,11 @@ const heroImages = [
     link: '/'
   },
   {
+    url: '/hero/our_courses.png',
+    alt: 'Super 30',
+    link: 'https://docs.google.com/forms/d/1zxaNDufaao-BNszYZOogcOGShyKDhc6iwBRkTnBh41k/viewform?edit_requested=true'
+  },
+  {
     url: '/hero/courses.png',
     alt: 'Our Courses Overview',
     link: '/courses'
@@ -46,16 +51,31 @@ export const Hero = () => {
             className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
               }`}
           >
-            <div
-              className={`w-full h-full bg-white ${image.link ? 'cursor-pointer' : ''}`}
-              style={{
-                backgroundImage: `url('${image.url}')`,
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-              }}
-              onClick={() => image.link && navigate(image.link)}
-            />
+            {image.url === '/hero/our_courses.png' ? (
+              <a
+                href={image.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-full h-full block ${image.link ? 'cursor-pointer' : ''}`}
+                style={{
+                  backgroundImage: `url('${image.url}')`,
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              />
+            ) : (
+              <div
+                className={`w-full h-full bg-white ${image.link ? 'cursor-pointer' : ''}`}
+                style={{
+                  backgroundImage: `url('${image.url}')`,
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+                onClick={() => image.link && navigate(image.link)}
+              />
+            )}
           </div>
         ))}
 
