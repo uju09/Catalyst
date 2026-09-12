@@ -16,7 +16,7 @@ const heroImages = [
   {
     url: '/hero/courses.png',
     alt: 'Our Courses Overview',
-    link: '/courses'
+    link: '/courses/super-30'
   },
   {
     url: '/hero/knowledge.png',
